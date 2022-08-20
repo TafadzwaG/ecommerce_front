@@ -47,6 +47,13 @@ export function authReducer(
                     authError: null,
                     loading: true
                 };
+            case AuthActions.AUTHENTICATE_FAIL:
+                return {
+                    ...state,
+                    user: null,
+                    authError: action.payload,
+                    loading: false
+                }
     
         default:
             return state;
