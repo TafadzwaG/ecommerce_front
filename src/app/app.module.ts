@@ -1,3 +1,4 @@
+import { AuthInterceptorService } from './interceptors/auth-interceptor.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -29,7 +30,7 @@ import { CtaContainerComponent } from './ui/cta-container/cta-container.componen
 import { SideBarLinkComponent } from './layouts/home/widget-side-bar/side-bar-link/side-bar-link.component';
 import { SubMenuComponent } from './layouts/home/widget-side-bar/sub-menu/sub-menu.component';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AdsContainerComponent } from './layouts/home/home-ads/ads-container/ads-container.component';
 import { FeaturedCardComponent } from './components/featured-card/featured-card.component';
 import { MiniCardComponent } from './components/mini-card/mini-card.component';
@@ -121,7 +122,13 @@ import { AuthEffects } from './ngrx-store/auth-store/auth.effects';
     EffectsModule.forRoot([AuthEffects]),
     StoreModule.forRoot(fromApp.appReducer)
   ],
-  providers: [],
+  providers: [
+    {
+      provide : HTTP_INTERCEPTORS,
+      useClass: AuthInterceptorService,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
