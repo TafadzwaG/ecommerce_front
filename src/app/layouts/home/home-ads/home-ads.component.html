@@ -1,0 +1,12 @@
+<div class="vc_row wpb_row top-row home-ads mb-2 porto-inner-container">
+  <div class="porto-wrap-container container">
+    <div class="row">
+      <div
+        class="vc_column_container col-md-4"
+        *ngFor="let homead of homeads; let i = index"
+      >
+        <app-ads-container [homead]="homead" [index]="i"> </app-ads-container>
+      </div>
+    </div>
+  </div>
+</div>

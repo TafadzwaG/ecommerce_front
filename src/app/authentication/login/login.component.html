@@ -1,0 +1,86 @@
+<div class="login-container">
+    <!-- <account-crumb :current_location="'Login'" :title="'Account Login'"> </account-crumb> -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 main-content" style="order: 2">
+          <div class="account-login-register">
+            <div class="login_content">
+              <div class="registered-users">
+                <div id="CustomerLoginForm" class="form-vertical">
+                  <div class="row">
+                    <div class="col-md-6 mx-auto mb-4">
+                      <div class="form-box">
+                        <h3 class="font-weight-bold mb-2 login-account  text-center">Login</h3>
+                        <div class="content">
+                          <form id="customer_login" accept-charset="UTF-8">
+                            <input type="hidden" name="form_type" /><input
+                              type="hidden"
+                              name="utf8"
+                              value="✓"
+                            />
+                            <ul class="form-list">
+                              <li>
+                                <label for="CustomerEmail" class="hidden-label"
+                                  ><span>Email Address</span><em>*</em></label
+                                >
+                                <input
+                                  type="email"
+                                  autofocus
+                                  required
+                                  class="input-full"
+                                  
+                                />
+                              </li>
+                              <li>
+                                <label for="CustomerPassword" class="hidden-label"
+                                  ><span>Password</span><em>*</em></label
+                                >
+                                <input
+                                  class="input-full"
+                                  type="password"
+                                  required
+                                />
+                              </li>
+                              <li class="mb-4">
+                                <a href="#recover" class="RecoverPassword"
+                                  >Forgot your password?</a
+                                >
+                              </li>
+
+                              <!-- <base-loader v-if="isLoading"> </base-loader> -->
+                              <li  class="mb-4">
+                                <button
+                                  type="submit"
+                                  class="btn w-100 btn-dark"
+                                  title="Log in"
+                                 
+                                >
+                                  <span class="login-account">Log in</span>
+                                </button>
+                              </li>
+                              <li  class="mb-lg-0">
+                                <a
+                                [routerLink]="['/register']"
+                                  type="button"
+                                  title="Create an
+                                            Account"
+                                  class="btn w-100 btn-dark"
+                                  
+                                >
+                                  <span class="create-account">Create an Account</span>
+                              </a>
+                              </li>
+                            </ul>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

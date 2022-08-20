@@ -1,0 +1,60 @@
+.yith-wcan-filters {
+  background-color: var(--yith-wcan-filters_colors_background, transparent);
+  margin-bottom: 30px;
+}
+.yith-wcan-filters h3.mobile-only {
+  display: none;
+}
+.yith-wcan-filters .yith-wcan-filter {
+  margin-bottom: 30px;
+}
+.yith-wcan-filters .yith-wcan-filter h4 {
+  color: var(--yith-wcan-filters_colors_titles, #434343);
+}
+.yith-wcan-filters .yith-wcan-filter h4.collapsable {
+  cursor: pointer;
+  position: relative;
+}
+.yith-wcan-filters .yith-wcan-filter h4.collapsable:after {
+  background-size: 100% auto;
+  content: "";
+  display: block;
+  height: 10px;
+  position: absolute;
+  right: 15px;
+  top: calc(50% - 5px);
+  width: 10px;
+}
+
+
+.vc_custom_1585973389421 {
+  margin-top: 20px !important;
+}
+.sizes-table {
+  width: 100%;
+  max-width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #21293c;
+}
+.sizes-table thead th {
+  background: #f4f4f2;
+}
+.sizes-table tbody tr:nth-child(2n) > * {
+  background: #ebebeb;
+}
+.sizes-table thead th {
+  padding: 30px 0 30px 10px;
+  font-weight: 600;
+}
+.sizes-table tbody td {
+  padding: 12px 0 12px 10px;
+  font-weight: bold;
+}
+@media (min-width: 576px) {
+  .sizes-table thead th:first-child,
+  .sizes-table tbody th {
+    padding-left: 30px;
+  }
+}

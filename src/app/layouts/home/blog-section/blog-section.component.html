@@ -1,0 +1,35 @@
+<aside>
+  <div class="block">
+    <div class="porto-block">
+      <div class="vc_row wpb_row row top-row">
+        <div class="vc_column_container col-md-12">
+          <div class="wpb_wrapper vc_column-inner">
+            <div class="porto-recent-posts wpb_content_element m-b-n">
+              <div class="row">
+                <div
+                  style="height: 240px; width: 400px;"
+                >
+                  <owl-carousel-o [options]="customOptions">
+                    <ng-template
+                      *ngFor="let blog of blogs; let i = index"
+                      carouselSlide
+                      [id]="blog.id"
+                      
+                    >
+                      <app-home-blog-card
+                        [blog]="blog"
+                        [index]="i"
+                      >
+                        
+                      </app-home-blog-card>
+                    </ng-template>
+                  </owl-carousel-o>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</aside>

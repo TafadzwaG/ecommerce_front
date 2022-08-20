@@ -1,0 +1,47 @@
+<div class="product-main">
+    <!-- <breadcrumb :home="'Home'" :to="'/'" :current_route="'SHOP LIST'"> </breadcrumb> -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 sidebar col-left">
+          <div id="shopify-section-sidebar-left" class="shopify-section">
+            <div class="mobile-canvas-overlay close-left"></div>
+            <!-- end config style -->
+            <div
+              class="block-main-canvas canvas-left"
+              style="border-bottom: 0px none rgb(119, 119, 119)"
+            >
+              <div class="canvas-icon sicon-left d-block d-lg-none">
+                <a href="javascript:void(0)"><i class="fa fa-sliders"></i></a>
+              </div>
+              <div class="canvas-inner sidebar-style-1">
+                <!-- <nav-categories @filter="filterByCategory"> </nav-categories> -->
+                <app-nav-categories></app-nav-categories>
+                <div class="block block-layered-nav">
+                  <div class="block-content">
+                    <dl class="narrow-by-list">
+                      <!-- <price-filter @filter="filterByPrice"> </price-filter> -->
+                      <app-price-filter></app-price-filter>
+                    </dl>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-9 main-content collection-content">
+          <div id="collection-main">
+            <app-shop-banner-card></app-shop-banner-card>
+
+            <div class="toolbar top_toolbar">
+              <app-filter-mini></app-filter-mini>
+            </div>
+
+            <div
+              class="category-products products grid products-spacing-10 item-1200-4 item-992-4 item-768-3 item-640-2 item-320-1"
+            >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

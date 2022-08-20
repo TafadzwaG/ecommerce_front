@@ -1,0 +1,93 @@
+<!-- <div
+  class="widget-sidebar side-custom-menu custom-menu-1597047153171 category-menu-style-default_new"
+  style="margin-bottom: 20px"
+>
+  <h2>
+    <span>BROWSE CATEGORIES</span>
+  </h2>
+  <div class="navigation-wrapper">
+    <div class="main-navigation">
+      <ul class="top-navigation side-menu">
+        <li class="level0 level-top active">
+          <a [routerLink]="['/home']" class="level-top">
+            <i class="category-icon Simple-Line-Icons-home"></i>
+
+            <span>
+              <span>Home </span>
+            </span>
+          </a>
+        </li>
+
+        <app-side-bar-link
+          [iconClass]="'category-icon Simple-Line-Icons-badge'"
+          *ngFor="let category of categories; let i = index"
+        >
+          <ng-container ngProjectAs="[link]">
+            <a >{{ category.name | uppercase }} </a>
+          </ng-container>
+
+          <ng-container ngProjectAs="[drop-down]">
+            <app-sub-menu *ngIf="category.subcategory.length !== 0">
+            </app-sub-menu>
+          </ng-container>
+        </app-side-bar-link>
+
+        <li class="level0 level-top active">
+          <a [routerLink]="['/home']" class="level-top">
+            <i class="category-icon Simple-Line-Icons-layers"></i>
+
+            <span>
+              <span>More</span>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div> -->
+
+<div id="main-sidebar-menu" class="widget_sidebar_menu main-sidebar-menu">
+  <div class="widget-title">Browse Categories</div>
+  <div class="sidebar-menu-wrap">
+    <ul id="menu-main-menu" class="sidebar-menu">
+      <li
+        id="nav-menu-item-749"
+        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-143 current_page_item active narrow"
+      >
+        <a [routerLink]="['/home']" class="current"
+          ><i class="Simple-Line-Icons-home"></i>Home</a
+        >
+      </li>
+
+      <li
+        id="nav-menu-item-748"
+        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children has-sub wide col-3 sub-ready"
+        *ngFor="let category of categories; let i = index"
+        
+      >
+        <a
+          [routerLink]="['/home']"
+          (mouseover)="expandCategories(i)"
+          (mouseleave)="expandCategories(i)"
+          
+          ><i class="category-icon Simple-Line-Icons-badge"></i>{{ category.name }}</a
+        ><span class="arrow"></span>
+
+        <div
+          class="popup"
+          *ngIf="isExpanded(i)"
+          [class]="isExpanded(i) ? 'block' : 'none-block'"
+          style="left: 248px; right: auto"
+        >
+          <div class="inner" style="max-width: 580px">
+            <ul class="sub-menu skeleton-body" style="width: 858px">
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

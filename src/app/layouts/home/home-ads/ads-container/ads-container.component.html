@@ -1,0 +1,55 @@
+<div class="wpb_wrapper vc_column-inner">
+  <div class="porto-ultimate-content-box-container">
+    <style>
+      #porto_ucb_2567 {
+        will-change: box-shadow;
+        box-shadow: none;
+      }
+      #porto_ucb_2567:hover {
+        box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+    <div
+      class="porto-ultimate-content-box vc_custom_1595216969075 has-content-pos justify-content-center"
+      [style]="
+        'min-height: 170px; background-size: cover;background-repeat: no-repeat;background-position:  
+          center; background-color: rgba(0, 0, 0, 0);  background-image: linear-gradient(to right, #e0eafc36, #cfdef344), url(&quot;' +
+        imageUrl +
+        homead.image +
+        '&quot;);'
+      "
+      id="porto_ucb_2567"
+    >
+      <div class="labels">
+        <div class="onhot" 
+        style="background-color: #62b959;
+        padding: 1px 8px; 
+        width: fit-content;
+        margin: 0 0 3px; 
+        color: #ffffff">{{ homead.title | uppercase }}</div>
+      </div>
+
+      <h4
+        style="font-size: 1.8125rem; line-height: 1; font-weight: 800"
+        class="vc_custom_heading mb-4 align-left heading-primary"
+      >
+        <sup
+          ><del
+            ><b>${{ homead.was }}</b></del
+          ></sup
+        >${{ homead.is_now }}
+      </h4>
+      <div class="vc_btn3-container mb-0 vc_btn3-inline">
+        <div style="display: inline-block; font-size: 1.4em; margin-left: -1px">
+          <a
+            [routerLink]="['/home']"
+            class="btn btn-modern btn-md btn-dark"
+            style="padding: 8px 20.4px; font-size: 10px"
+          >
+            Shop Now!
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

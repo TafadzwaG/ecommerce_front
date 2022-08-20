@@ -1,0 +1,54 @@
+<div class="vc_row wpb_row row top-row mt-2 mb-1">
+  <div class="col-sm-6 vc_column_container col-md-4">
+    <div class="wpb_wrapper vc_column-inner">
+      <div class="vc_widget_woo_top_rated_products wpb_content_element">
+        <div class="widget woocommerce widget_top_rated_products">
+          <h2 class="widgettitle">Top Rated Products</h2>
+          <ul class="product_list_widget">
+            <app-mini-card
+              *ngFor="let product of products; let i = index"
+              [product]="product"
+              [index]="i"
+            >
+            </app-mini-card>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-6 vc_column_container col-md-4">
+    <div class="wpb_wrapper vc_column-inner">
+      <div class="vc_widget_woo_products wpb_content_element">
+        <div class="widget woocommerce widget_products">
+          <h2 class="widgettitle">Best Selling Products</h2>
+          <ul class="product_list_widget">
+            <app-mini-card
+              *ngFor="let product of products; let i = index"
+              [product]="product"
+              [index]="i"
+            >
+            </app-mini-card>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6 vc_column_container col-md-4">
+    <div class="wpb_wrapper vc_column-inner">
+      <div class="vc_widget_woo_products wpb_content_element">
+        <div class="widget woocommerce widget_products">
+          <h2 class="widgettitle">Latest Products</h2>
+          <ul class="product_list_widget">
+            <app-mini-card
+              *ngFor="let product of products; let i = index"
+              [product]="product"
+              [index]="i"
+            >
+            </app-mini-card>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

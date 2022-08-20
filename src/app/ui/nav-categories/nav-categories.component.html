@@ -1,0 +1,95 @@
+<div class="block block-nav sidebar-cate-toogle" style="padding: 20px">
+  <div class="block-title">
+    <h3>
+      <span data-translate="collections.sidebar.categories">Categories</span>
+    </h3>
+    <span class="collapse">
+      <i class="icon-up-dir"></i>
+      <i class="icon-down-dir"></i>
+    </span>
+  </div>
+  <div class="sidebar-content block-content">
+    <ul id="categories_nav" class="nav-accordion nav-categories" style="">
+      <li
+        class="level0 level-top parent active"
+        *ngFor="let category of categories; let i = index"
+      >
+        <a class="level-top">
+          <span class="span-with-check-box">
+            <input
+              type="checkbox"
+              class="checkbox smart_input"
+              name=""
+              [value]="category.id"
+              [id]="'category' + i"
+              [(ngModel)]="selected.categories"
+            />
+            <span class="lang1" (click)="expandCategories(i)">{{
+              category.name
+            }}</span>
+            <span class="count">({{ category.products_count }})</span>
+          </span> </a
+        ><span
+          *ngIf="category.subcategory.length > 0"
+          [class]="isExpanded(i) ? 'expand' : 'collapse'"
+        ></span>
+        <ul
+          class="level0"
+          *ngIf="isExpanded(i)"
+          [class]="isExpanded(i) ? 'block' : 'none-block'"
+        >
+          <li
+            class="level1"
+            *ngFor="let category of category.subcategory; let i = index"
+          >
+            <a>
+              <span class="span-with-check-box">
+                <input
+                  type="checkbox"
+                  class="checkbox smart_input"
+                  name=""
+                  [value]="category.id"
+                  [id]="'category' + i"
+                  [(ngModel)]="selected.categories"
+                />
+                <span class="lang1" (click)="expandSubCategories(category.id)">
+                  {{ category.name }}
+                </span>
+                <span class="count"> ({{ category.products_count }}) </span>
+              </span>
+            </a>
+            <span
+              *ngIf="category.subcategory.length > 0"
+              [class]="isExpandedSubGroup(category.id) ? 'expand' : 'collapse'"
+            ></span>
+            <ul
+              class="level0"
+              *ngIf="isExpandedSubGroup(category.id)"
+              [class]="isExpandedSubGroup(category.id) ? 'block' : 'none-block'"
+            >
+              <li
+                class="level1"
+                *ngFor="let category of category.subcategory; let i = index"
+              >
+                <a>
+                  <span class="span-with-check-box">
+                    <input
+                      type="checkbox"
+                      class="checkbox smart_input"
+                      name=""
+                      [value]="category.id"
+                      [id]="'category' + i"
+                      [(ngModel)]="selected.categories"
+                    />
+                    <span class="lang1">{{ category.name }}</span>
+                    <span class="count">({{ category.products_count }})</span>
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,232 @@
+<header class="main-section-header header-color">
+  <div
+    class="header-container type1 header-color-custom header-sticky-color-dark header-menu-style-default_new sticky-menu-color-dark header-menu-left sticky-header"
+  >
+    <div class="top-links-container topbar-text-custom">
+      <div class="container">
+        <div class="top-links-inner">
+          <!-- Currency -->
+          <div class="currency-wrapper top-select">
+            <a href="javascript:void(0);" class="title">
+              <span class="current-currency">USD</span>
+              <i class="icon-angle-down"></i>
+            </a>
+            <ul class="setting-currency">
+              <li class="selected"><a href="#" data-currency="USD">USD</a></li>
+
+              <li><a href="#" data-currency="EUR">EUR</a></li>
+
+              <li><a href="#" data-currency="GBP">GBP</a></li>
+            </ul>
+          </div>
+          <!-- Currency -->
+
+          <span class="split"></span>
+          <!-- Language -->
+          <div class="language-wrapper top-select">
+            <a href="javascript:void(0);" class="title">
+              <span class="current-language">
+                <span class="lang-1 active">
+                  <img
+                    alt=""
+                    src="../../../assets/cdn.shopify.com/s/files/1/1632/5913/t/48/assets/flag_icon_1cc09.png?v=14395468882822536733"
+                    class="lazypreload lazyloaded"
+                  />
+
+                  Eng
+                </span>
+              </span>
+              <i class="icon-angle-down"></i>
+            </a>
+            <ul class="select-language clearfix">
+              <li>
+                <a href="javascript:void(0);" class="active" data-lang="1"
+                  ><img
+                    alt=""
+                    src="../../../assets/cdn.shopify.com/s/files/1/1632/5913/t/48/assets/flag_icon_1cc09.png?v=14395468882822536733"
+                    class="lazypreload lazyloaded"
+                  />
+                  Eng</a
+                >
+              </li>
+              <li>
+                <a href="javascript:void(0);" data-lang="2"
+                  ><img
+                    alt=""
+                    src="../../../assets/cdn.shopify.com/s/files/1/1632/5913/t/48/assets/flag_icon_24411.png?v=10435401942848500526"
+                    class="lazypreload lazyloaded"
+                  />
+                  Frh</a
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- Language -->
+
+          <div class="top-links-area show-icon-tablet">
+            <div
+              id="shopify-section-header-toplink-menu"
+              class="shopify-section"
+            >
+              <!-- Links -->
+              <ul class="links">
+                <li>
+                  <a [routerLink]="['/dashboard']">Dashboard</a>
+                </li>
+                <li>
+                  <a [routerLink]="['/blogs']"> Blogs</a>
+                </li>
+                <li>
+                  <a [routerLink]="['/about']"> About </a>
+                </li>
+                <li>
+                  <a [routerLink]="['/register']"> Create Account </a>
+                </li>
+
+                <li>
+                  <a [routerLink]="['/login']"> Login </a>
+                </li>
+                <li>
+                  <a href=""> Log out </a>
+                </li>
+              </ul>
+              <!-- Links -->
+              <span class="separator"></span>
+              <div class="custom-html">
+                <div class="share-links">
+                  <a target="_blank" class="share-facebook" href="#"
+                    ><i class="fa fa-facebook" aria-hidden="true"></i
+                  ></a>
+                  <a target="_blank" class="share-twitter" href="#"
+                    ><i class="fa fa-twitter" aria-hidden="true"></i
+                  ></a>
+                  <a target="_blank" class="share-instagram" href="#"
+                    ><i class="icon-instagram" aria-hidden="true"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Middle Bar -->
+    <div class="conta">
+      <div class="header container">
+        <div class="header-left">
+          <!-- <logo></logo> -->
+          <div>
+            <div class="menu-icon">
+              <a href="#" title="Menu"><i class="fa fa-bars"></i></a>
+            </div>
+            <div class="site-logo">
+              <a  [routerLink]="['/home']" class="logo porto-main-logo">
+                <img
+                  src="../../../assets/cdn.shopify.com/s/files/1/1632/5913/t/48/assets/logo_blue_newef89.png?v=12494903614538815173"
+                  style="max-width: 111px"
+                  alt="Porto - Homepage 1"
+                  class="lazypreload lazyloaded"
+                />
+              </a>
+            </div>
+          </div>
+          <!-- <logo></logo> -->
+        </div>
+
+        <div class="header-center">
+          <!-- <search></search> -->
+          <div class="search-area show-icon-tablet">
+            <a href="#" class="search-icon"
+              ><span><i class="icon-magnifier"></i></span
+            ></a>
+            <div class="search-extended has-categories">
+              <form
+                role="search"
+                class="searchform has-categories-dropdown porto-ajax-search"
+              >
+                <label class="screen-reader-text" for="q"></label>
+                <input
+                  type="text"
+                  class="s"
+                  placeholder="Search..."
+                  v-model="searchTerm"
+                />
+                <input type="hidden" name="type" value="product" />
+                <div
+                  id="shopify-section-search-by-category"
+                  class="shopify-section"
+                ></div>
+                <button class="searchsubmit">Search</button>
+              </form>
+
+              <div class="search-info-text">
+                <span>Start typing to see products you are looking for.</span>
+              </div>
+            </div>
+          </div>
+          <!-- <search></search> -->
+        </div>
+        <div class="header-right">
+          <div class="cart-area">
+            <div class="custom-block">
+              <div class="header-contact">
+                <!-- <call></call> -->
+                <div
+                class="porto-sicon-box text-start mx-4 mb-0 d-none d-lg-flex d-sticky-header-none wpb_custom_1efe903570d178ff0a9b7bfa5febd3a4 style_1 default-icon"
+              >
+                <div class="porto-sicon-default">
+                  <div
+                    class="porto-just-icon-wrapper porto-icon none"
+                    style="color: #222529; font-size: 29px"
+                  >
+                    <i class="porto-icon-phone-2"></i>
+                  </div>
+                </div>
+                <div class="porto-sicon-header">
+                  <h3
+                    class="porto-sicon-title"
+                    style="
+                      font-weight: 600;
+                      font-size: 11px;
+                      line-height: 1.2;
+                      color: #777777;
+                    "
+                  >
+                    CALL US NOW
+                  </h3>
+                  <p
+                    style="
+                      font-weight: 700;
+                      font-size: 18px;
+                      line-height: 0.9;
+                      color: #222529;
+                    "
+                  >
+                    (+263) 782903276
+                  </p>
+                </div>
+                <!-- header -->
+              </div>
+                <!-- <call></call> -->
+
+                <!-- <router-link to="/dashboard" class="my-account m-l-xs mr-1 mr-lg-2">
+                    <i class="icon-user-2"></i>
+                  </router-link> -->
+                <a href="#" class="my-account m-l-xs mr-1 mr-lg-2">
+                  <i class="icon-user-2"></i>
+                </a>
+
+                <a href="#" class="wishlist-popup mr-1 mr-lg-2 pr-lg-1">
+                  <i class="icon-wishlist-2"></i>
+                </a>
+              </div>
+            </div>
+
+            <app-mini-cart></app-mini-cart>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Middle Bar -->
+  </div>
+</header>

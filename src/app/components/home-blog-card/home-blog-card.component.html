@@ -1,0 +1,47 @@
+<div class="post-carousel porto-carousel dots-style-1">
+  <div class="post-slide">
+    <div class="post-item">
+      <a>
+        <span class="post-image thumb-info thumb-info-hide-wrapper-bg m-b-md">
+          <span class="thumb-info-wrapper" *ngIf="blog.blog_images">
+            <!-- <img
+                class="porto-lazyload img-responsive"
+                width="400"
+                alt=""
+              height="300"
+                [src]="imageUrl + blog.blog_images[0].image"
+              /> -->
+            <div
+              [style]="
+                'height: 200px;width: 300px background-size: cover;background-repeat: no-repeat;background-position:  
+                center; background-color: rgba(0, 0, 0, 0);  background-image:  url(&quot;' +
+                imageUrl +
+                blog.blog_images[0].image +
+                '&quot;);'
+              "
+            ></div>
+          </span>
+        </span>
+      </a>
+      <div class="post-date">
+        <span class="day">{{ getDay(blog.posted_at) }}</span
+        ><span class="month">{{ getMonth(blog.posted_at) }}</span
+        ><time datetime="2019-09-30">{{ formatDate(blog.posted_at) }}</time>
+      </div>
+      <h4>
+        <a href="2019/09/30/post-format-standard-2/index.html">
+          {{ blog.title }}
+        </a>
+      </h4>
+      <div>
+        <div class="limit">
+          <p class="post-excerpt">
+            {{ blog.body }}
+          </p>
+        </div>
+        <a class="read-more">read more <i class="fas fa-angle-right"></i></a>
+        
+      </div>
+    </div>
+  </div>
+</div>

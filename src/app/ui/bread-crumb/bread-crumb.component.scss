@@ -1,0 +1,15 @@
+.main-breadcrumbs {
+    margin-top: 1rem;
+  }
+  .home a::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-family: "porto";
+    text-indent: 0;
+    content: "";
+  }
+  
+  .bread-crumb-links {
+    display: flex;
+  }

@@ -1,0 +1,71 @@
+<div style="width: 775px">
+  <owl-carousel-o [options]="customOptions">
+    <ng-template
+      *ngFor="let banner of banners; let i = index"
+      carouselSlide
+      [id]="banner.id"
+      [width]="775"
+    >
+      <div
+        [style]="
+          'height: 400px; background-size: cover;background-repeat: no-repeat;background-position:  center; background-color: rgba(0, 0, 0, 0); min-height: 400px; background-image:  linear-gradient(to right, #e0eafc36, #cfdef344),  url(&quot;' +
+          imageUrl +
+          banner.image +
+          '&quot;);'
+        "
+      >
+        <p class="slide-description">{{ banner.description }}</p>
+        <h1 class="slide-title">{{ banner.title }}</h1>
+        <h3
+          style="
+            font-size: 4.6em;
+            line-height: 1;
+            font-weight: 700;
+            margin-left: 2rem;
+          "
+          class="mb-3 align-left heading-light"
+        >
+          {{ banner.percentage_off }}
+        </h3>
+        <div class="vc_row wpb_row vc_inner row" style="margin-left: 2rem">
+          <div class="vc_column_container col-md-12">
+            <div class="wpb_wrapper vc_column-inner">
+              <h4
+                style="
+                  font-size: 1.1em;
+                  line-height: 1;
+                  font-weight: 600;
+                  padding-top: 10px;
+                "
+                class="mr-3 pull-left p-t-sm ls-n-20 align-left text-uppercase heading-light"
+              >
+                Starting At
+              </h4>
+              <h4
+                style="font-size: 1.5em; line-height: 1"
+                class="coupon-sale-text d-inline-block mr-2 background-color-secondary align-left heading-light"
+              >
+                <b><sup>$</sup>{{ banner.starting_at }}</b>
+              </h4>
+              <div
+                style="
+                  display: inline-block;
+                  font-size: 1.4em;
+                  margin-left: -3px;
+                "
+              >
+                <a
+                  [routerLink]="['/home']"
+                  class="btn btn-modern btn-md btn-dark"
+                  style="padding: 13px 36.4px; font-size: 13px"
+                >
+                  Shop Now!
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </owl-carousel-o>
+</div>

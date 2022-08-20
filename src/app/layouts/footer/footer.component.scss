@@ -1,0 +1,53 @@
+.footer-wrapper,
+.footer-wrapper p {
+  font-size: 13px;
+  line-height: 24px;
+  letter-spacing: 0.065px;
+}
+
+.footer-middle .widget-wrapper {
+  margin-bottom: 20px;
+}
+
+.footer-middle .info-footer .footer-block-title h3 {
+  margin: 0 0 15px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.footer-middle b {
+  font-weight: 400;
+}
+
+.footer-middle ul.contact-info li span {
+  line-height: 24px;
+}
+
+.footer-wrapper .share-links a {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px !important;
+  border: 1px solid #313438;
+  box-shadow: none;
+  margin: 2px;
+  color: #fff;
+  font-size: 14px;
+}
+
+.footer-bottom {
+  padding: 21px 0;
+}
+
+.footer-wrapper .footer-bottom address {
+  margin-left: 0;
+  font-size: 0.9em;
+}
+
+.footer-wrapper .footer-bottom .container::before {
+  top: -21px;
+  background-color: #313438;
+}
+.box_footer {
+  margin-top: 6rem;
+}

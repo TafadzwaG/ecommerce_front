@@ -1,0 +1,41 @@
+<div class="vc_row wpb_row row top-row">
+  <div class="vc_column_container col-md-12">
+    <div class="wpb_wrapper vc_column-inner">
+      <div
+        id="porto-products-8846"
+        class="porto-products wpb_content_element title-border-bottom mb-4 wpb_custom_aeb2ba7df7a27d76048c02dc3283b7c5"
+      >
+        <h2 class="section-title slider-title">Featured Products</h2>
+        <div class="slider-wrapper">
+          <div class="woocommerce columns-4">
+            <owl-carousel-o [options]="customOptions">
+              <ng-template
+                *ngFor="let feature of featured_products; let i = index"
+                carouselSlide
+                [id]="feature.id"
+                [width]="775"
+              >
+                <div class="">
+                  <div class="">
+                    <ul
+                      class="products products-container products-slider owl-carousel show-dots-title-right is-shortcode"
+                    >
+                      <li
+                        class="product-col product-outimage_aq_onimage product type-product post-600 status-publish first onbackorder product_cat-electronics product_cat-t-shirts product_tag-fashion product_tag-hub product_tag-sports has-post-thumbnail featured shipping-taxable purchasable product-type-simple"
+                      >
+                        <app-featured-card
+                          [feature]="feature"
+                          [index]="i"
+                        ></app-featured-card>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </ng-template>
+            </owl-carousel-o>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

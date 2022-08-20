@@ -1,0 +1,88 @@
+<div class="product-inner">
+  <div class="product-image">
+    <a>
+      <div class="labels">
+        <div class="onhot">Hot</div>
+      </div>
+      <div class="inner" *ngIf="feature.product_images[0]">
+        <div 
+        [style]="
+          'height: 170px; background-size: cover;background-repeat: no-repeat;background-position:  
+          center; background-color: rgba(0, 0, 0, 0);  background-image:  url(&quot;' +
+          imageUrl +
+          feature.product_images[0].image +
+          '&quot;);'
+        "
+        >
+
+        </div>
+      </div>
+    </a>
+    <div class="links-on-image">
+      <div class="add-links-wrap">
+        <div class="add-links clearfix">
+          <div
+            class="yith-wcwl-add-to-wishlist add-to-wishlist-600 wishlist-fragment on-first-load"
+          >
+            <!-- ADD TO WISHLIST -->
+
+            <div class="yith-wcwl-add-button">
+              <a class="add_to_wishlist single_add_to_wishlist">
+                <span>Add to Wishlist</span>
+              </a>
+            </div>
+
+            <!-- COUNT TEXT -->
+          </div>
+          <div class="quickview" title="Quick View">Quick View</div>
+          <a
+            class="viewcart-style-3 button product_type_simple add_to_cart_button ajax_add_to_cart"
+            title="Compare"
+            >Add to Cart</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="product-content">
+    <div
+      class="yith-wcwl-add-to-wishlist add-to-wishlist-600 wishlist-fragment on-first-load"
+    >
+      <!-- ADD TO WISHLIST -->
+
+      <div class="yith-wcwl-add-button">
+        <a class="add_to_wishlist single_add_to_wishlist">
+          <span>Add to Wishlist</span>
+        </a>
+      </div>
+
+      <!-- COUNT TEXT -->
+    </div>
+    <span class="category-list">
+      <a>{{ feature.categories[0].name }}</a></span
+    >
+    <a class="product-loop-title" [routerLink]="['/product_detail/' + feature.id]" >
+      <h3 class="woocommerce-loop-product__title">{{ feature.name }}</h3>
+    </a>
+
+    <div class="rating-wrap">
+      <div class="rating-content">
+        <div class="star-rating" title="5.00">
+          <span style="width: 80%"
+            ><strong class="rating">4.00</strong> out of 5</span
+          >
+        </div>
+      </div>
+    </div>
+
+    <span class="price"
+      ><span class="woocommerce-Price-amount amount"
+        ><bdi
+          ><span class="woocommerce-Price-currencySymbol">&#36;</span
+          >{{ feature.price.toFixed(2) }}</bdi
+        ></span
+      ></span
+    >
+  </div>
+</div>

@@ -1,0 +1,21 @@
+.list-of-products {
+    /* border: 1px solid #ccc; */
+    display: flex;
+  
+    align-items: center;
+    /* justify-content: center; */
+  }
+  .image-container {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    border: 1px solid #0088cc;
+  }
+
+
+  .block {
+    display: block;
+  }
+  .none-block {
+    display: none;
+  }

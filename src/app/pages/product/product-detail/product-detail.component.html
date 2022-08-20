@@ -1,0 +1,102 @@
+<div id="main" class="column1 boxed">
+  <!-- main -->
+
+  <div class="container">
+    <div class="row main-content-wrap">
+      <!-- main content -->
+      <div class="main-content col-lg-12">
+        <div id="primary" class="content-area">
+          <main id="content" class="site-main">
+            <div class="woocommerce-notices-wrapper"></div>
+            <div
+              id="product-1252"
+              class="product type-product post-1252 status-publish first instock product_cat-headphone product_cat-watches has-post-thumbnail featured shipping-taxable purchasable product-type-variable product-layout-default"
+            >
+              <div class="product-summary-wrap">
+                <app-product [product]="product"> </app-product>
+                <!-- .summary -->
+              </div>
+
+              <div
+                class="woocommerce-tabs woocommerce-tabs-tm4vyltq resp-htabs"
+                id="product-tab"
+                style="display: block; width: 100%"
+              >
+                <ul class="resp-tabs-list" role="tablist">
+                  <li
+                    class="reviews_tab resp-tab-item resp-tab-active"
+                    id="tab-title-reviews"
+                    role="tab"
+                    aria-controls="tab_item-3"
+                  >
+                    Reviews (3)
+                  </li>
+                </ul>
+                <div class="resp-tabs-container">
+                  <h2
+                    class="resp-accordion resp-tab-active"
+                    role="tab"
+                    aria-controls="tab_item-3"
+                  >
+                    <span class="resp-arrow"></span> Reviews (3)
+                  </h2>
+                  <div
+                    class="tab-content resp-tab-content resp-tab-content-active"
+                    id="tab-reviews"
+                    style="display: block"
+                  >
+                    <div id="reviews" class="woocommerce-Reviews">
+                      <div id="comments">
+                        <h2 class="woocommerce-Reviews-title">
+                          {{ product.reviews.length }} reviews for
+                          <span>{{ product.name }}</span>
+                        </h2>
+
+                        <ol class="commentlist">
+                          <app-review-card></app-review-card>
+
+                          <!-- #comment-## -->
+                        </ol>
+                      </div>
+
+                      <hr class="tall" />
+
+                      <app-review-form></app-review-form>
+
+                      <div class="clear"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- #product-1252 -->
+          </main>
+        </div>
+      </div>
+      <!-- end main content -->
+
+      <div class="sidebar-overlay"></div>
+    </div>
+  </div>
+
+  <div class="porto-block" data-id="2091">
+    <div
+      class="vc_row wpb_row top-row pb-4 product-bottom porto-inner-container"
+    >
+      <div class="porto-wrap-container container">
+        <div class="row">
+          <div class="vc_column_container col-md-12">
+            <div class="wpb_wrapper vc_column-inner">
+              <div class="porto-separator mb-5">
+                <hr
+                  class="separator-line align_center solid"
+                  style="background-color: #e7e7e7"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

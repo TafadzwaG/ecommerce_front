@@ -1,0 +1,39 @@
+<li *ngIf="product">
+  <a  class="product-image" title="Casual Blue Shoes">
+    <div class="inner img-effect">
+      <img
+        class="porto-lazyload"
+        [src]="imageUrl + product.product_images[0].image"
+        alt=""
+        width="85"
+        height="85"
+      /><img
+        *ngIf="product.product_images[1]"
+        [src]="imageUrl + product.product_images[1].image"
+        alt=""
+        width="85"
+        height="85"
+        class="porto-lazyload hover-image"
+      />
+    </div>
+  </a>
+
+  <div class="product-details">
+    <a   style="cursor: pointer ;"  [routerLink]="['/product_detail/' + product.id]">
+      <span class="product-title">
+    {{ product.name }}    
+    </span>
+    </a>
+
+    <div class="star-rating" title="5.00">
+      <span style="width: 100%"
+        ><strong class="rating">5.00</strong> out of 5</span
+      >
+    </div>
+    <span class="woocommerce-Price-amount amount"
+      ><bdi
+        ><span class="woocommerce-Price-currencySymbol">&#36;</span>{{ product.price.toFixed(2) }}</bdi
+      ></span
+    >
+  </div>
+</li>

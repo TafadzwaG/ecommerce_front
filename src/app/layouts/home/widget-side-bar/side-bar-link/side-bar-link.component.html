@@ -1,0 +1,14 @@
+<li class="level0 level-top parent static-dropdown">
+  <a  [routerLink]="['/home']" class="level-top">
+    <i [class]="iconClass"></i>
+
+    <span>
+      <span>
+        <ng-content select="[link]"></ng-content>
+        
+      </span>
+    </span>
+  </a>
+
+  <ng-content select="[drop-down]"></ng-content>
+</li>

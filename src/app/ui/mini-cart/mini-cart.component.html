@@ -1,0 +1,93 @@
+<div class="mini-cart">
+  <div class="cart-design-7 widget-design-3"
+    (mouseover)="hover = true"
+    (mouseleave)="hover = false"
+    >
+    <a [routerLink]="['/cart']" class="icon-cart-header">
+      <i class="icon-mini-cart"></i
+      ><span class="cart-total"
+        ><span class="cart-qty">0</span><span>item(s)</span></span
+      >
+    </a>
+
+    <div
+      class="cart-wrapper theme-border-color"
+      style="display: block"
+      *ngIf="hover"
+    >
+      <div class="cart-inner">
+        <div class="cart-inner-content">
+          <div class="cart-content">
+            <div class="total-count">
+              <span v-if="cart_total_qty > 0">
+                cart_total_qty <span> item(s)</span></span
+              >
+              <span else>0<span> item(s)</span></span>
+
+              <a href="#" class="btn-button view-cart bordered uppercase">
+                <span>View cart</span>
+              </a>
+            </div>
+
+            <p class="no-items-in-cart">
+              You have no items in your shopping cart.
+            </p>
+
+            <ul v-else class="clearfix">
+              <li class="item-cart">
+                <a class="product-image">
+                  <img
+                    class="lazyloaded"
+                    data-src="#"
+                    alt="product image"
+                    src="#"
+                  />
+                </a>
+                <div class="product-details row-fluid show-grid">
+                  <p class="product-name">
+                    <a>
+                      <span>
+                        <span>productname</span>
+                      </span>
+                    </a>
+                  </p>
+                  <div class="items">
+                    <span class="price"
+                      >item.quantity ×
+                      <span class="amount"
+                        ><span class="money">$</span></span
+                      ></span
+                    >
+                  </div>
+                  <div class="access">
+                    <a
+                      href="#"
+                      class="btn-remove btn-remove-cart"
+                      title="Remove item"
+                      ><i class="icon-cancel"></i
+                    ></a>
+                  </div>
+                </div>
+                <div class="ajax-loading"></div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="cart-checkout">
+            <div class="cart-info">
+              <p class="subtotal">
+                <span class="label">Total:</span>
+                <span class="price"><span class="money">$</span></span>
+              </p>
+            </div>
+            <div class="actions">
+              <a href="#" class="btn-button bordered uppercase checkout-cart">
+                <span>Checkout</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

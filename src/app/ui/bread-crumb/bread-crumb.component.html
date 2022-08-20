@@ -1,0 +1,24 @@
+<nav class="main-breadcrumbs" role="navigation" aria-label="breadcrumbs">
+  <div class="container">
+    <div class="breadcrumbs">
+      <div class="breadcrumbs-inner">
+        <ul class="bread-crumb-links">
+          <li class="home">
+            <a [routerLink]="['/home']" class="">
+              <i class="category-icon Simple-Line-Icons-home"></i>
+            </a>
+          </li>
+
+          <li class="">
+            <span class="breadcrumbs-split"
+              ><i class="icon-angle-right"></i
+            ></span>
+            <span>
+              <span>{{ current_route }}</span>
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>

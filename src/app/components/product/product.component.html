@@ -1,0 +1,242 @@
+<div class="row">
+  <div class="summary-before col-md-5">
+    <div class="labels"><div class="onhot">Hot</div></div>
+    <div class="product-images images">
+      <div
+        class="product-image-slider owl-carousel show-nav-hover has-ccols ccols-1"
+      >
+        <div class="img-thumbnail">
+          <div class="inner">
+            <div
+              class="porto-lazyload woocommerce-main-image img-responsive"
+              [style]="
+                'height: 400px; background-size: cover;background-repeat: no-repeat;background-position:  center; background-color: rgba(0, 0, 0, 0); min-height: 400px; background-image:    url(&quot;' +
+                imageUrl +
+                product.product_images[0].image +
+                '&quot;);'
+              "
+            ></div>
+          </div>
+        </div>
+      </div>
+      <span class="zoom" data-index="0"><i class="porto-icon-plus"></i></span>
+    </div>
+    <!-- Slide Thumb -->
+    <div class="product-thumbnails thumbnails">
+      <div class="product-thumbs-slider owl-carousel has-ccols ccols-4">
+        <div class="img-thumbnail" *ngFor="let img of product.product_images">
+          <div
+            class="woocommerce-main-thumb img-responsive"
+            [style]="
+              'height: 100px ;background-size: cover;background-repeat: no-repeat;background-position:  center; background-color: rgba(0, 0, 0, 0); background-image:    url(&quot;' +
+              imageUrl +
+              img.image +
+              '&quot;);'
+            "
+          ></div>
+        </div>
+      </div>
+    </div>
+    <!-- Slide Thumb -->
+  </div>
+
+  <div class="summary entry-summary col-md-7">
+    <h2 class="product_title entry-title show-product-nav">
+      {{ product.name }}
+    </h2>
+    <div class="product-nav">
+      <div class="product-prev">
+        <a>
+          <span class="product-link"></span>
+          <span class="product-popup">
+            <span class="featured-box">
+              <span class="box-content">
+                <span class="product-image">
+                  <span class="inner">
+                    <img
+                      width="150"
+                      height="150"
+                      src="https://www.portotheme.com/wordpress/porto/shop1/wp-content/themes/porto/images/lazy.png"
+                      data-oi="https://www.portotheme.com/wordpress/porto/shop1/wp-content/uploads/sites/77/2017/11/product-7-150x150.jpg"
+                      class="porto-lazyload attachment-shop_thumbnail size-shop_thumbnail wp-post-image"
+                      alt=""
+                    />
+                  </span>
+                </span>
+                <span class="product-details">
+                  <span class="product-title">Battery Charger</span>
+                </span>
+              </span>
+            </span>
+          </span>
+        </a>
+      </div>
+      <div class="product-next">
+        <a>
+          <span class="product-link"></span>
+          <span class="product-popup">
+            <span class="featured-box">
+              <span class="box-content">
+                <span class="product-image">
+                  <span class="inner">
+                    <img
+                      width="150"
+                      height="150"
+                      src=""
+                      data-oi=""
+                      class="porto-lazyload attachment-shop_thumbnail size-shop_thumbnail wp-post-image"
+                      alt=""
+                    />
+                  </span>
+                </span>
+                <span class="product-details">
+                  <span class="product-title">Porto Extended Camera</span>
+                </span>
+              </span>
+            </span>
+          </span>
+        </a>
+      </div>
+    </div>
+    <div class="woocommerce-product-rating">
+      <div class="star-rating" title="" data-bs-original-title="5">
+        <span style="width: 90.4%">
+          <strong class="rating">5</strong> out of 5
+        </span>
+      </div>
+      <div class="review-link">
+        <a class="woocommerce-review-link" rel="nofollow"
+          ><span class="count">3</span> customer reviews</a
+        >|<a class="woocommerce-write-review-link"
+          style="cursor: pointer;"
+          >Add a review</a
+        >
+      </div>
+    </div>
+    <p class="price">
+      <span class="woocommerce-Price-amount amount"
+        ><bdi
+          ><span class="woocommerce-Price-currencySymbol">$</span
+          >{{ product.totalPrice.toFixed(2) }}</bdi
+        ></span
+      >
+    </p>
+
+    <div class="description woocommerce-product-details__short-description">
+      <p>
+        {{ product.description }}
+      </p>
+    </div>
+    <div class="product_meta">
+      <span class="sku_wrapper"
+        >CATEGORIES:
+        <span
+          class="sku"
+          *ngFor="let category of product.categories; let i = index"
+          >{{ category.name }},</span
+        ></span
+      >
+    </div>
+
+    <form class="variations_form cart vf_init">
+      <app-color-size></app-color-size>
+
+      <div class="single_variation_wrap">
+        <div
+          class="woocommerce-variation single_variation"
+          style="display: none"
+        ></div>
+        <div
+          class="woocommerce-variation-add-to-cart variations_button woocommerce-variation-add-to-cart-disabled"
+        >
+          <div class="quantity buttons_added">
+            <button type="button" value="-" class="minus">-</button>
+            <input
+              type="number"
+              id="quantity_62fcf3f015170"
+              class="input-text qty text"
+              step="1"
+              min="1"
+              max=""
+              name="quantity"
+              value="1"
+              title="Qty"
+              size="4"
+              placeholder=""
+              inputmode="numeric"
+            />
+            <button type="button" value="+" class="plus">+</button>
+          </div>
+
+          <button
+            type="submit"
+            class="single_add_to_cart_button button alt disabled wc-variation-selection-needed"
+          >
+            Add to cart
+          </button>
+
+          <a
+            href=""
+            class="wc-action-btn view-cart-btn button wc-forward"
+            style="padding-top: 15px"
+            >View cart</a
+          >
+          <input type="hidden" name="add-to-cart" value="1252" />
+          <input type="hidden" name="product_id" value="1252" />
+          <input
+            type="hidden"
+            name="variation_id"
+            class="variation_id"
+            value="0"
+          />
+        </div>
+      </div>
+    </form>
+
+    <div class="product-share">
+      <app-share-links></app-share-links>
+    </div>
+    <div
+      class="yith-wcwl-add-to-wishlist wishlist-fragment on-first-load add-to-wishlist-1252"
+      style="zoom: 1; opacity: 0.6"
+    >
+      <!-- ADD TO WISHLIST -->
+
+      <div class="yith-wcwl-add-button">
+        <a href="" class="add_to_wishlist single_add_to_wishlist"> </a>
+      </div>
+
+      <!-- COUNT TEXT -->
+
+      <div class="blockUI" style="display: none"></div>
+      <div
+        class="blockUI blockOverlay"
+        style="
+          z-index: 1000;
+          border: none;
+          margin: 0px;
+          padding: 0px;
+          width: 100%;
+          height: 100%;
+          top: 0px;
+          left: 0px;
+          background: url('https://www.portotheme.com/wordpress/porto/shop1/wp-content/plugins/yith-woocommerce-wishlist/assets/images/ajax-loader-alt.svg')
+            center center / 40px 40px no-repeat transparent;
+          opacity: 1;
+          cursor: wait;
+          position: absolute;
+        "
+      ></div>
+      <div
+        class="blockUI blockMsg blockElement"
+        style="
+          z-index: 1011;
+          display: none;
+          position: absolute;
+          left: 60.5px;
+          top: 18px;
+        "
+      ></div>
+    </div>
+  </div>
+</div>
