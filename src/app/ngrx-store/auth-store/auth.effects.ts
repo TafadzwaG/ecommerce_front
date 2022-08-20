@@ -13,16 +13,16 @@ import { baseURL } from 'src/environments/environment';
 
 const handleAuthentication = (
     id: number,
-    name : string,
-    email : string,
+    name: string,
+    email: string,
     token: string,
     cart: {
-      id: number,
-      items : []
+        id: number,
+        items: []
     },
     wishlist: {
-      id: number,
-      items : []
+        id: number,
+        items: []
     }
 
 ) => {
@@ -34,22 +34,22 @@ const handleAuthentication = (
         email: email,
         token: token,
         cart: cart,
-        wishlist : wishlist
+        wishlist: wishlist
     })
 }
 
 const handleError = (errorRes: any) => {
     let errorMessage = 'An unknown error occurred!';
     let err
-    if(!errorRes.error || !errorRes.error.message){
+    if (!errorRes.error || !errorRes.error.message) {
         return of(new AuthActions.AuthenticateFail(errorMessage))
-      }
+    }
 
-      errorMessage = errorRes.error.message
-      err = errorRes.error.errors
-      console.log(err)
+    errorMessage = errorRes.error.message
+    err = errorRes.error.errors
+    console.log(err)
 
-      return of(new AuthActions.AuthenticateFail(errorMessage))
+    return of(new AuthActions.AuthenticateFail(errorMessage))
 }
 
 
@@ -63,16 +63,16 @@ export class AuthEffects {
                 .post<AuthResponseData>(
                     baseURL + 'user/register',
                     {
-                        name : signupAction.payload.name,
+                        name: signupAction.payload.name,
                         email: signupAction.payload.email,
                         password: signupAction.payload.password,
-                        password_confirmation : signupAction.payload.password_confirmation
+                        password_confirmation: signupAction.payload.password_confirmation
                     }
-                ).pipe (
-                    tap ( resData => {
+                ).pipe(
+                    tap(resData => {
                         console.log(resData)
                     }),
-                    map( resData => {
+                    map(resData => {
                         return handleAuthentication(
                             resData.user.id,
                             resData.user.name,
@@ -81,6 +81,41 @@ export class AuthEffects {
                             resData.user.cart,
                             resData.user.wishlist
                         )
+                    }), catchError(errorRes => {
+                        return handleError(errorRes)
+                    })
+                )
+        })
+    )
+
+
+    @Effect()
+    authLogin = this.actions$.pipe(
+        ofType(AuthActions.LOGIN_START),
+        switchMap((authData: AuthActions.LoginStart) => {
+            return this.http
+                .post<AuthResponseData>(
+                    baseURL + 'user/login',
+                    {
+                        email: authData.payload.email,
+                        password: authData.payload.password
+                    }
+                ).pipe(
+                    tap(resData => {
+
+                    }),
+                    map(resData => {
+                        return handleAuthentication(
+                            resData.user.id,
+                            resData.user.name,
+                            resData.user.email,
+                            resData.access_token,
+                            resData.user.cart,
+                            resData.user.wishlist
+                        )
+                    }),
+                    catchError(errorRes => {
+                        return handleError(errorRes)
                     })
                 )
         })
@@ -93,5 +128,5 @@ export class AuthEffects {
         private actions$: Actions,
         private http: HttpClient,
         private router: Router,
-    ){}
+    ) { }
 }
