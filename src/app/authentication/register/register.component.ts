@@ -41,7 +41,7 @@ export class RegisterComponent implements OnInit {
     )
   }
 
-  onSubmitLogin(form: NgForm) {
+  onSubmitRegister(form: NgForm) {
     if (!form.valid) {
       return;
     }
