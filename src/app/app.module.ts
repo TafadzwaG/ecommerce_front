@@ -56,7 +56,7 @@ import { ShareLinksComponent } from './ui/share-links/share-links.component';
 import { ColorSizeComponent } from './components/product/color-size/color-size.component';
 import { AccountBreadCrumbComponent } from './ui/account-bread-crumb/account-bread-crumb.component';
 import { SpinnerComponent } from './ui/spinner/spinner.component'
-
+import * as fromApp from './ngrx-store/app.reducer'
 
 @NgModule({
   declarations: [
@@ -117,7 +117,7 @@ import { SpinnerComponent } from './ui/spinner/spinner.component'
     HttpClientModule,
     CarouselModule, 
     EffectsModule.forRoot([]),
-    StoreModule.forRoot({})
+    StoreModule.forRoot(fromApp.appReducer)
   ],
   providers: [],
   bootstrap: [AppComponent]
