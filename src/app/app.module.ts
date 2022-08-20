@@ -57,6 +57,8 @@ import { ColorSizeComponent } from './components/product/color-size/color-size.c
 import { AccountBreadCrumbComponent } from './ui/account-bread-crumb/account-bread-crumb.component';
 import { SpinnerComponent } from './ui/spinner/spinner.component'
 import * as fromApp from './ngrx-store/app.reducer'
+import { AuthEffects } from './ngrx-store/auth-store/auth.effects';
+
 
 @NgModule({
   declarations: [
@@ -116,7 +118,7 @@ import * as fromApp from './ngrx-store/app.reducer'
     FormsModule,
     HttpClientModule,
     CarouselModule, 
-    EffectsModule.forRoot([]),
+    EffectsModule.forRoot([AuthEffects]),
     StoreModule.forRoot(fromApp.appReducer)
   ],
   providers: [],

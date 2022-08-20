@@ -7,7 +7,14 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6 mx-auto mb-4">
-        <div class="form-box">
+        <div *ngIf="error">
+          <p>{{ error }}</p>
+        </div>
+        <form
+          class="form-box"
+          (ngSubmit)="onSubmitLogin(authForm)"
+          #authForm="ngForm"
+        >
           <h3 class="legend text-center">Register</h3>
           <div class="content">
             <ul class="form-list">
@@ -16,13 +23,15 @@
                   ><span>Name</span><em>*</em></label
                 >
                 <input
-                  type="text"
-                  name="customer[first_name]"
+                  type="name"
+                  placeholder="Enter your username"
+                  name="name"
                   id="FirstName"
                   class="input-full"
                   autocapitalize="words"
                   autofocus=""
-                  required=""
+                  required
+                  ngModel
                 />
               </li>
 
@@ -32,25 +41,43 @@
                 >
                 <input
                   type="email"
-                  name="customer[email]"
+                  name="email"
                   id="Email"
+                  placeholder="Enter your email"
                   class="input-full"
                   autocorrect="off"
                   autocapitalize="off"
-                  required=""
+                  required
+                  ngModel
                 />
               </li>
               <li>
                 <label for="CreatePassword" class="hidden-label"
                   ><span>Password</span><em>*</em></label
                 >
-                <input type="password" class="input-full" required="" />
+                <input
+                  type="password"
+                  class="input-full"
+                  required=""
+                  name="password"
+                  placeholder="***********"
+                  ngModel
+                  required
+                />
               </li>
               <li>
                 <label for="CreatePasswordConfirmation" class="hidden-label"
                   ><span>Password Confirmation</span><em>*</em></label
                 >
-                <input type="password" class="input-full" required="" />
+                <input
+                  type="password"
+                  class="input-full"
+                  required=""
+                  name="password_confirmation"
+                  placeholder="***********"
+                  ngModel
+                  required
+                />
               </li>
 
               <!-- <base-loader v-if="isLoading"> </base-loader> -->
@@ -64,7 +91,7 @@
               </li>
             </ul>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   </div>
