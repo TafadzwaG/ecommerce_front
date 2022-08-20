@@ -34,7 +34,8 @@ const handleAuthentication = (
         email: email,
         token: token,
         cart: cart,
-        wishlist: wishlist
+        wishlist: wishlist,
+        redirect: true
     })
 }
 
@@ -163,11 +164,21 @@ export class AuthEffects {
                     token: loadedUser.token,
                     cart: loadedUser.cart,
                     wishlist: loadedUser.wishlist,
+                    redirect: false
                 })
             }
 
             return { type: 'DUMMY' };
 
+        })
+    )
+
+    @Effect({dispatch: false})
+    authLogout = this.actions$.pipe(
+        ofType(AuthActions.LOGOUT),
+        tap(()=> {
+            localStorage.removeItem('userData');
+            this.router.navigate(['/login'])
         })
     )
 

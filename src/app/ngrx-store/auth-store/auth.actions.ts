@@ -27,6 +27,7 @@ export class AuthenticateSuccess implements Action {
                 id: number
                 items : []
             }
+            redirect: boolean
             
         }
     ){}
