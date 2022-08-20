@@ -1,0 +1,28 @@
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    li {
+      font-size: 13px !important;
+    }
+  }
+  .navigation {
+    font-size: 10px;
+  }
+  .category-icon {
+    font-size: 10px !important;
+    margin-right: 4px;
+  }
+  .page-title {
+    font-size: 23px !important;
+    font-weight: 900 !important;
+  }
+  .home a::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-family: "porto";
+    text-indent: 0;
+    content: "" !important;
+  }

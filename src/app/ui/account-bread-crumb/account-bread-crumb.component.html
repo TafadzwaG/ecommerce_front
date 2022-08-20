@@ -1,0 +1,21 @@
+<div class="row mt-2 mb-2">
+  <div class="col-lg-12">
+    <div class="breadcrumbs-wrap text-center">
+      <ul class="breadcrumb">
+        <li class="home">
+          <i class="category-icon Simple-Line-Icons-home"></i>
+          <a [routerLink]="['/home']" class="navigation">Home</a>
+          <i class="icon-angle-right"></i>
+        </li>
+        <li>
+          <span class="navigation">{{ current_location }}</span>
+        </li>
+      </ul>
+    </div>
+    <div class="text-center">
+      <h1 class="page-title">
+        <span>{{ title }}</span>
+      </h1>
+    </div>
+  </div>
+</div>

@@ -53,7 +53,8 @@ import { ReviewFormComponent } from './components/review-form/review-form.compon
 import { ReviewCardComponent } from './components/review-card/review-card.component';
 import { ProductComponent } from './components/product/product.component';
 import { ShareLinksComponent } from './ui/share-links/share-links.component';
-import { ColorSizeComponent } from './components/product/color-size/color-size.component'
+import { ColorSizeComponent } from './components/product/color-size/color-size.component';
+import { AccountBreadCrumbComponent } from './ui/account-bread-crumb/account-bread-crumb.component'
 
 
 @NgModule({
@@ -105,6 +106,7 @@ import { ColorSizeComponent } from './components/product/color-size/color-size.c
     ProductComponent,
     ShareLinksComponent,
     ColorSizeComponent,
+    AccountBreadCrumbComponent,
   ],
   imports: [
     BrowserModule,
