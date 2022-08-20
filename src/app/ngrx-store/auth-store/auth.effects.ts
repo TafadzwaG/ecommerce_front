@@ -8,6 +8,7 @@ import { HttpClient } from '@angular/common/http';
 
 import * as AuthActions from './auth.actions'
 import { User } from 'src/app/models/user.model';
+import { baseURL } from 'src/environments/environment';
 
 
 const handleAuthentication = (
@@ -49,4 +50,48 @@ const handleError = (errorRes: any) => {
       console.log(err)
 
       return of(new AuthActions.AuthenticateFail(errorMessage))
+}
+
+
+@Injectable()
+export class AuthEffects {
+    @Effect()
+    authSignup = this.actions$.pipe(
+        ofType(AuthActions.SIGNUP_START),
+        switchMap((signupAction: AuthActions.SignupStart) => {
+            return this.http
+                .post<AuthResponseData>(
+                    baseURL + 'user/register',
+                    {
+                        name : signupAction.payload.name,
+                        email: signupAction.payload.email,
+                        password: signupAction.payload.password,
+                        password_confirmation : signupAction.payload.password_confirmation
+                    }
+                ).pipe (
+                    tap ( resData => {
+                        console.log(resData)
+                    }),
+                    map( resData => {
+                        return handleAuthentication(
+                            resData.user.id,
+                            resData.user.name,
+                            resData.user.email,
+                            resData.access_token,
+                            resData.user.cart,
+                            resData.user.wishlist
+                        )
+                    })
+                )
+        })
+    )
+
+
+
+
+    constructor(
+        private actions$: Actions,
+        private http: HttpClient,
+        private router: Router,
+    ){}
 }
