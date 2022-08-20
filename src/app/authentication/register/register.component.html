@@ -1,1 +1,68 @@
-<p>register works!</p>
+<div class="register-container">
+  <!-- <account-crumb :current_location="'Create Account'" :title="'Create Account'">
+    </account-crumb> -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 mx-auto mb-4">
+        <div class="form-box">
+          <h3 class="legend text-center">Register</h3>
+          <div class="content">
+            <ul class="form-list">
+              <li class="">
+                <label for="FirstName" class="hidden-label"
+                  ><span>Name</span><em>*</em></label
+                >
+                <input
+                  type="text"
+                  name="customer[first_name]"
+                  id="FirstName"
+                  class="input-full"
+                  autocapitalize="words"
+                  autofocus=""
+                  required=""
+                />
+              </li>
+
+              <li>
+                <label for="Email" class="hidden-label css_inspector_current"
+                  ><span>Email</span><em>*</em></label
+                >
+                <input
+                  type="email"
+                  name="customer[email]"
+                  id="Email"
+                  class="input-full"
+                  autocorrect="off"
+                  autocapitalize="off"
+                  required=""
+                />
+              </li>
+              <li>
+                <label for="CreatePassword" class="hidden-label"
+                  ><span>Password</span><em>*</em></label
+                >
+                <input type="password" class="input-full" required="" />
+              </li>
+              <li>
+                <label for="CreatePasswordConfirmation" class="hidden-label"
+                  ><span>Password Confirmation</span><em>*</em></label
+                >
+                <input type="password" class="input-full" required="" />
+              </li>
+
+              <!-- <base-loader v-if="isLoading"> </base-loader> -->
+              <li class="mb-lg-0">
+                <p class="required">
+                  <a class="already-have-account">Already have an account ?</a>
+                </p>
+                <button type="submit" class="btn w-100 btn-dark" title="Log in">
+                  <span class="login-account">Register</span>
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
