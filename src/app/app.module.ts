@@ -54,7 +54,8 @@ import { ReviewCardComponent } from './components/review-card/review-card.compon
 import { ProductComponent } from './components/product/product.component';
 import { ShareLinksComponent } from './ui/share-links/share-links.component';
 import { ColorSizeComponent } from './components/product/color-size/color-size.component';
-import { AccountBreadCrumbComponent } from './ui/account-bread-crumb/account-bread-crumb.component'
+import { AccountBreadCrumbComponent } from './ui/account-bread-crumb/account-bread-crumb.component';
+import { SpinnerComponent } from './ui/spinner/spinner.component'
 
 
 @NgModule({
@@ -107,6 +108,7 @@ import { AccountBreadCrumbComponent } from './ui/account-bread-crumb/account-bre
     ShareLinksComponent,
     ColorSizeComponent,
     AccountBreadCrumbComponent,
+    SpinnerComponent,
   ],
   imports: [
     BrowserModule,

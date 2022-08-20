@@ -1,4 +1,4 @@
-import { DataStorageService } from './../../../services/data-storage.service';
+import { DataStorageService } from '../../../ui/services/data-storage.service';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o'
 

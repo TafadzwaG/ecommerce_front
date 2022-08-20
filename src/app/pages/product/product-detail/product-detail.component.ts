@@ -1,4 +1,4 @@
-import { DataStorageService } from './../../../services/data-storage.service';
+import { DataStorageService } from '../../../ui/services/data-storage.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 

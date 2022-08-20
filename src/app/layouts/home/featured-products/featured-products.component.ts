@@ -1,5 +1,5 @@
 import { OwlOptions } from 'ngx-owl-carousel-o';
-import { DataStorageService } from './../../../services/data-storage.service';
+import { DataStorageService } from '../../../ui/services/data-storage.service';
 import { Component, OnInit } from '@angular/core';
 
 
