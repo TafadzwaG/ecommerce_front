@@ -121,6 +121,56 @@ export class AuthEffects {
         })
     )
 
+    @Effect()
+    autoLogin = this.actions$.pipe(
+        ofType(AuthActions.AUTO_LOGIN),
+        map(() => {
+            const userData: {
+                email: string,
+                id: number,
+                username: string,
+                _token: string,
+                _cart: {
+                    id: number
+                    items: []
+                },
+                _wishlist: {
+                    id: number
+                    items: []
+                }
+            } = JSON.parse(localStorage.getItem('userData')!)
+            if (!userData) {
+                return {
+                    type: 'SOME DATA'
+                }
+            }
+            const loadedUser = new User(
+                userData.id,
+                userData.username,
+                userData.email,
+                userData._token,
+                userData._cart,
+                userData._wishlist
+
+            )
+
+            if (loadedUser.token) {
+
+                return new AuthActions.AuthenticateSuccess({
+                    id: loadedUser.id,
+                    name: loadedUser.name,
+                    email: loadedUser.email,
+                    token: loadedUser.token,
+                    cart: loadedUser.cart,
+                    wishlist: loadedUser.wishlist,
+                })
+            }
+
+            return { type: 'DUMMY' };
+
+        })
+    )
+
 
 
 
