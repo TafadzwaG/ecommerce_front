@@ -50,3 +50,11 @@ export class RemoveItemFailed implements Action {
         public payload: string
     ){}
 }
+
+export type CartActions =
+    | AddItemToCartStart
+    | AddingItemFailed
+    | RemoveItemFailed
+    | RemoveItemSuccess
+    | RemoveItemFromCart
+    | AddItemSuccess
