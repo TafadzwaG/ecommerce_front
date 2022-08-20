@@ -122,6 +122,16 @@ export class AuthEffects {
         })
     )
 
+    @Effect({ dispatch: false})
+    authRedirect = this.actions$.pipe(
+        ofType(AuthActions.AUTHENTICATE_SUCCESS),
+        tap((authSuccessAction: AuthActions.AuthenticateSuccess) => {
+            if(authSuccessAction.payload.redirect){
+                this.router.navigate(['/']);
+            }
+        })
+    )
+
     @Effect()
     autoLogin = this.actions$.pipe(
         ofType(AuthActions.AUTO_LOGIN),
