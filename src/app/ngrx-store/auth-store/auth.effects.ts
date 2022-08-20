@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Actions, ofType, Effect } from '@ngrx/effects';
 import { switchMap, catchError, map, tap } from 'rxjs/operators';
-import { of } from 'rxjs';
+import { of, throwError } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 import * as AuthActions from './auth.actions'
@@ -37,4 +37,16 @@ const handleAuthentication = (
     })
 }
 
+const handleError = (errorRes: any) => {
+    let errorMessage = 'An unknown error occurred!';
+    let err
+    if(!errorRes.error || !errorRes.error.message){
+        return of(new AuthActions.AuthenticateFail(errorMessage))
+      }
 
+      errorMessage = errorRes.error.message
+      err = errorRes.error.errors
+      console.log(err)
+
+      return of(new AuthActions.AuthenticateFail(errorMessage))
+}
