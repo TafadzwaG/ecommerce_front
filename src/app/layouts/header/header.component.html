@@ -79,14 +79,14 @@
                 <li>
                   <a [routerLink]="['/about']"> About </a>
                 </li>
-                <li>
+                <li *ngIf="!isAuthenticated">
                   <a [routerLink]="['/register']"> Create Account </a>
                 </li>
 
-                <li>
+                <li *ngIf="!isAuthenticated">
                   <a [routerLink]="['/login']"> Login </a>
                 </li>
-                <li>
+                <li *ngIf="isAuthenticated">
                   <a href=""> Log out </a>
                 </li>
               </ul>

@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private store: Store<fromApp.AppState>
-  ) { 
+  ) {
     this.storeSubscription = Subscription.EMPTY
   }
 
@@ -34,12 +34,12 @@ export class LoginComponent implements OnInit {
     )
   }
 
-  onSubmitLogin(form: NgForm): void{
+  onSubmitLogin(form: NgForm): void {
 
     const email = form.value.email
     const password = form.value.password
 
-    if(!form.valid){
+    if (!form.valid) {
       return
     }
 

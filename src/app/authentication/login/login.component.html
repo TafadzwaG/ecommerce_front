@@ -18,7 +18,10 @@
                       <div class="form-box">
                         <h3 class="font-weight-bold mb-2 login-account  text-center">Login</h3>
                         <div class="content">
-                          <form id="customer_login" accept-charset="UTF-8">
+                          <form id="customer_login" 
+                            (ngSubmit)="onSubmitLogin(authForm)"
+                            #authForm="ngForm"
+                          >
                             <input type="hidden" name="form_type" /><input
                               type="hidden"
                               name="utf8"
@@ -32,6 +35,8 @@
                                 <input
                                   type="email"
                                   autofocus
+                                  name="email"
+                                  ngModel
                                   required
                                   class="input-full"
                                   
@@ -44,6 +49,8 @@
                                 <input
                                   class="input-full"
                                   type="password"
+                                  name="password"
+                                  ngModel
                                   required
                                 />
                               </li>
@@ -53,8 +60,10 @@
                                 >
                               </li>
 
-                              <!-- <base-loader v-if="isLoading"> </base-loader> -->
-                              <li  class="mb-4">
+                              <div class="text-center">
+                                <app-spinner *ngIf="isLoading"></app-spinner>
+                              </div>
+                              <li  class="mb-4" *ngIf="!isLoading">
                                 <button
                                   type="submit"
                                   class="btn w-100 btn-dark"
@@ -64,7 +73,7 @@
                                   <span class="login-account">Log in</span>
                                 </button>
                               </li>
-                              <li  class="mb-lg-0">
+                              <li  class="mb-lg-0" *ngIf="!isLoading">
                                 <a
                                 [routerLink]="['/register']"
                                   type="button"
@@ -74,9 +83,12 @@
                                   
                                 >
                                   <span class="create-account">Create an Account</span>
+                                 
                               </a>
                               </li>
+                              
                             </ul>
+                            
                           </form>
                         </div>
                       </div>
