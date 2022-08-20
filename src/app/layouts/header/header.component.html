@@ -70,24 +70,24 @@
             >
               <!-- Links -->
               <ul class="links">
-                <li>
-                  <a [routerLink]="['/dashboard']">Dashboard</a>
+                <li *ngIf="isAuthenticated">
+                  <a [routerLink]="['/dashboard']" style="cursor: pointer">Dashboard</a>
                 </li>
                 <li>
-                  <a [routerLink]="['/blogs']"> Blogs</a>
+                  <a [routerLink]="['/blogs']" style="cursor: pointer"> Blogs</a>
                 </li>
                 <li>
-                  <a [routerLink]="['/about']"> About </a>
+                  <a [routerLink]="['/about']" style="cursor: pointer"> About </a>
                 </li>
                 <li *ngIf="!isAuthenticated">
-                  <a [routerLink]="['/register']"> Create Account </a>
+                  <a [routerLink]="['/register']" style="cursor: pointer"> Create Account </a>
                 </li>
 
                 <li *ngIf="!isAuthenticated">
-                  <a [routerLink]="['/login']"> Login </a>
+                  <a [routerLink]="['/login']" style="cursor: pointer"> Login </a>
                 </li>
                 <li *ngIf="isAuthenticated">
-                  <a href=""> Log out </a>
+                  <a (click)="onLogout()" style="cursor: pointer"> Log out </a>
                 </li>
               </ul>
               <!-- Links -->
@@ -120,7 +120,7 @@
               <a href="#" title="Menu"><i class="fa fa-bars"></i></a>
             </div>
             <div class="site-logo">
-              <a  [routerLink]="['/home']" class="logo porto-main-logo">
+              <a [routerLink]="['/home']" class="logo porto-main-logo">
                 <img
                   src="../../../assets/cdn.shopify.com/s/files/1/1632/5913/t/48/assets/logo_blue_newef89.png?v=12494903614538815173"
                   style="max-width: 111px"
@@ -172,41 +172,41 @@
               <div class="header-contact">
                 <!-- <call></call> -->
                 <div
-                class="porto-sicon-box text-start mx-4 mb-0 d-none d-lg-flex d-sticky-header-none wpb_custom_1efe903570d178ff0a9b7bfa5febd3a4 style_1 default-icon"
-              >
-                <div class="porto-sicon-default">
-                  <div
-                    class="porto-just-icon-wrapper porto-icon none"
-                    style="color: #222529; font-size: 29px"
-                  >
-                    <i class="porto-icon-phone-2"></i>
+                  class="porto-sicon-box text-start mx-4 mb-0 d-none d-lg-flex d-sticky-header-none wpb_custom_1efe903570d178ff0a9b7bfa5febd3a4 style_1 default-icon"
+                >
+                  <div class="porto-sicon-default">
+                    <div
+                      class="porto-just-icon-wrapper porto-icon none"
+                      style="color: #222529; font-size: 29px"
+                    >
+                      <i class="porto-icon-phone-2"></i>
+                    </div>
                   </div>
+                  <div class="porto-sicon-header">
+                    <h3
+                      class="porto-sicon-title"
+                      style="
+                        font-weight: 600;
+                        font-size: 11px;
+                        line-height: 1.2;
+                        color: #777777;
+                      "
+                    >
+                      CALL US NOW
+                    </h3>
+                    <p
+                      style="
+                        font-weight: 700;
+                        font-size: 18px;
+                        line-height: 0.9;
+                        color: #222529;
+                      "
+                    >
+                      (+263) 782903276
+                    </p>
+                  </div>
+                  <!-- header -->
                 </div>
-                <div class="porto-sicon-header">
-                  <h3
-                    class="porto-sicon-title"
-                    style="
-                      font-weight: 600;
-                      font-size: 11px;
-                      line-height: 1.2;
-                      color: #777777;
-                    "
-                  >
-                    CALL US NOW
-                  </h3>
-                  <p
-                    style="
-                      font-weight: 700;
-                      font-size: 18px;
-                      line-height: 0.9;
-                      color: #222529;
-                    "
-                  >
-                    (+263) 782903276
-                  </p>
-                </div>
-                <!-- header -->
-              </div>
                 <!-- <call></call> -->
 
                 <!-- <router-link to="/dashboard" class="my-account m-l-xs mr-1 mr-lg-2">

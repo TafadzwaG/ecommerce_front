@@ -34,4 +34,9 @@ export class HeaderComponent implements OnInit {
     this.userSubscription.unsubscribe()
   }
 
+
+  onLogout(): void {
+    this.store.dispatch(new AuthActions.Logout())
+  }
+
 }
