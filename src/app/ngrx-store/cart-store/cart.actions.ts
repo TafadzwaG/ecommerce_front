@@ -1,3 +1,4 @@
+import { Product } from './../../models/product.model';
 import { Action } from '@ngrx/store'
 
 export const ADD_ITEM_TO_CART_START = '[Cart] Add item to cart Start'
@@ -13,7 +14,10 @@ export class AddItemToCartStart implements Action {
     readonly type = ADD_ITEM_TO_CART_START
 
     constructor(
-        public payload: {}
+        public payload: {
+            product_id: number
+            quantity: number
+        }
     ){}
 }
 
@@ -32,7 +36,7 @@ export class AddingItemFailed implements Action {
 export class AddItemSuccess implements Action {
     readonly type = ADDING_ITEM_SUCCESS
     constructor(
-        public payload: {}
+        public payload: string
     ){}
 }
 

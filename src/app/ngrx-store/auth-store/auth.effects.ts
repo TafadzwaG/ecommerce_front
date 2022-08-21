@@ -26,7 +26,7 @@ const handleAuthentication = (
     }
 
 ) => {
-    const user = new User(id, name, email, token, wishlist, cart)
+    const user = new User(id, name, email, token, cart, wishlist )
     localStorage.setItem('userData', JSON.stringify(user))
     return new AuthActions.AuthenticateSuccess({
         id: id,
@@ -121,6 +121,12 @@ export class AuthEffects {
                 )
         })
     )
+
+    // @Effect()
+    // authRealoadUser = this.actions$.pipe(
+    //     ofType(),
+    //     switchMap()
+    // )
 
     @Effect({ dispatch: false})
     authRedirect = this.actions$.pipe(

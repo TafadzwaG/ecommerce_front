@@ -1,3 +1,4 @@
+import { CartEffects } from './ngrx-store/cart-store/cart.effects';
 import { AuthInterceptorService } from './interceptors/auth-interceptor.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -119,7 +120,7 @@ import { AuthEffects } from './ngrx-store/auth-store/auth.effects';
     FormsModule,
     HttpClientModule,
     CarouselModule, 
-    EffectsModule.forRoot([AuthEffects]),
+    EffectsModule.forRoot([AuthEffects, CartEffects]),
     StoreModule.forRoot(fromApp.appReducer)
   ],
   providers: [

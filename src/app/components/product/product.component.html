@@ -169,11 +169,15 @@
           </div>
 
           <button
-            type="submit"
+            *ngIf="!isLoading"
+            (click)="onAddToCart(product.id, 1)"
             class="single_add_to_cart_button button alt disabled wc-variation-selection-needed"
           >
             Add to cart
           </button>
+          <app-spinner
+            *ngIf="isLoading"
+            ></app-spinner>
 
           <a
             href=""
