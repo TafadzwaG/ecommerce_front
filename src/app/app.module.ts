@@ -60,7 +60,9 @@ import { AccountBreadCrumbComponent } from './ui/account-bread-crumb/account-bre
 import { SpinnerComponent } from './ui/spinner/spinner.component'
 import * as fromApp from './ngrx-store/app.reducer'
 import { AuthEffects } from './ngrx-store/auth-store/auth.effects';
-import  { BrowserAnimationsModule }  from '@angular/platform-browser/animations'
+import  { BrowserAnimationsModule }  from '@angular/platform-browser/animations';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment'
 
 @NgModule({
   declarations: [
@@ -122,7 +124,8 @@ import  { BrowserAnimationsModule }  from '@angular/platform-browser/animations'
     CarouselModule,
     BrowserAnimationsModule,
     EffectsModule.forRoot([AuthEffects, CartEffects]),
-    StoreModule.forRoot(fromApp.appReducer)
+    StoreModule.forRoot(fromApp.appReducer),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
   ],
   providers: [
     {

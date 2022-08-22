@@ -144,6 +144,7 @@ export class AuthEffects {
                     )
                 }),
                 catchError(erroRes => {
+                    console.log(erroRes)
                     return handleError(erroRes)
                 })
             )
