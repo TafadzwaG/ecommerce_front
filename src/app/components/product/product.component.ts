@@ -38,7 +38,7 @@ export class ProductComponent implements OnInit {
     }))
 
 
-    // this.store.dispatch(new AuthActions.ReloadUser())
+    
   }
 
   onReloadUser(): void {

@@ -60,7 +60,7 @@ import { AccountBreadCrumbComponent } from './ui/account-bread-crumb/account-bre
 import { SpinnerComponent } from './ui/spinner/spinner.component'
 import * as fromApp from './ngrx-store/app.reducer'
 import { AuthEffects } from './ngrx-store/auth-store/auth.effects';
-
+import  { BrowserAnimationsModule }  from '@angular/platform-browser/animations'
 
 @NgModule({
   declarations: [
@@ -119,7 +119,8 @@ import { AuthEffects } from './ngrx-store/auth-store/auth.effects';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    CarouselModule, 
+    CarouselModule,
+    BrowserAnimationsModule,
     EffectsModule.forRoot([AuthEffects, CartEffects]),
     StoreModule.forRoot(fromApp.appReducer)
   ],
