@@ -30,7 +30,7 @@ export class CartEffects {
         switchMap((addToCartAction: CartActions.AddItemToCartStart) => {
             return this.http
                 .post<AddToCartResponse>(
-                    baseURL + 'carts/' + 9, {
+                    baseURL + 'carts/' + 12, {
                         product_id: addToCartAction.payload.product_id,
                         quantity: addToCartAction.payload.quantity
                     }

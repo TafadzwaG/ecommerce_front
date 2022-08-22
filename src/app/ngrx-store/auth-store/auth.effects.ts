@@ -40,6 +40,7 @@ const handleAuthentication = (
 }
 
 const handleError = (errorRes: any) => {
+    console.log(errorRes)
     let errorMessage = 'An unknown error occurred!';
     let err
     if (!errorRes.error || !errorRes.error.message) {
@@ -82,6 +83,7 @@ export class AuthEffects {
                             resData.user.cart,
                             resData.user.wishlist
                         )
+                        
                     }), catchError(errorRes => {
                         return handleError(errorRes)
                     })
@@ -142,10 +144,6 @@ export class AuthEffects {
                         resData.user.cart,
                         resData.user.wishlist
                     )
-                }),
-                catchError(erroRes => {
-                    console.log(erroRes)
-                    return handleError(erroRes)
                 })
             )
         })

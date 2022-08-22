@@ -37,7 +37,7 @@ export class ProductComponent implements OnInit {
       quantity
     }))
 
-
+    this.store.dispatch( new AuthActions.ReloadUser())
     
   }
 

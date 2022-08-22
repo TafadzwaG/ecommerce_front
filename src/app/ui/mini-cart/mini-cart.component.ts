@@ -9,10 +9,19 @@ export class MiniCartComponent implements OnInit {
 
   public hover : boolean = false
 
+  public cart_items = 0
+
   constructor() { }
 
-  ngOnInit(): void {
+  getCartItems(){
+    let cart = JSON.parse(localStorage.getItem('cart')) 
+
+    this.cart_items = cart.items.length
     
+  }
+
+  ngOnInit(): void {
+    this.getCartItems()
   }
 
 }
