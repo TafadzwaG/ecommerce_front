@@ -10,6 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 export class ProductDetailComponent implements OnInit {
 
   public product: any
+  public isLoading: boolean = false
 
   constructor(
     private dataStorageService : DataStorageService,
@@ -17,9 +18,11 @@ export class ProductDetailComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.isLoading = true
     const id = this.route.snapshot.params['id']
     this.dataStorageService.getSingleProduct(id).subscribe( product => {
       console.log(product)
+      this.isLoading = false
       this.product = product
     })
   }

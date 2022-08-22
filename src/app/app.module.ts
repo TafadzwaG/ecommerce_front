@@ -62,7 +62,8 @@ import * as fromApp from './ngrx-store/app.reducer'
 import { AuthEffects } from './ngrx-store/auth-store/auth.effects';
 import  { BrowserAnimationsModule }  from '@angular/platform-browser/animations';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { environment } from '../environments/environment'
+import { environment } from '../environments/environment';
+import { ProductDetailStComponent } from './skeletons/product-detail-st/product-detail-st.component'
 
 @NgModule({
   declarations: [
@@ -115,6 +116,7 @@ import { environment } from '../environments/environment'
     ColorSizeComponent,
     AccountBreadCrumbComponent,
     SpinnerComponent,
+    ProductDetailStComponent,
   ],
   imports: [
     BrowserModule,

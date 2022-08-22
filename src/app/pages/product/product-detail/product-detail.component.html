@@ -1,7 +1,13 @@
 <div id="main" class="column1 boxed">
   <!-- main -->
 
-  <div class="container">
+  <product-detail-st
+  *ngIf="isLoading"
+  >
+
+  </product-detail-st>
+
+  <div class="container" *ngIf="!isLoading">
     <div class="row main-content-wrap">
       <!-- main content -->
       <div class="main-content col-lg-12">
@@ -47,7 +53,10 @@
                   >
                     <div id="reviews" class="woocommerce-Reviews">
                       <div id="comments">
-                        <h2 class="woocommerce-Reviews-title">
+                        <h2
+                          class="woocommerce-Reviews-title"
+                          *ngIf="product.reviews"
+                        >
                           {{ product.reviews.length }} reviews for
                           <span>{{ product.name }}</span>
                         </h2>
