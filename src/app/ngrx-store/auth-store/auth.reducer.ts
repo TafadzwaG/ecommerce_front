@@ -54,6 +54,12 @@ export function authReducer(
                 authError: action.payload,
                 loading: false
             }
+        case AuthActions.RELOAD_USER:
+            return {
+                ...state,
+                authError: '',
+                loading: true
+            }
 
         default:
             return {

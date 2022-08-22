@@ -107,8 +107,7 @@
       <div class="review-link">
         <a class="woocommerce-review-link" rel="nofollow"
           ><span class="count">3</span> customer reviews</a
-        >|<a class="woocommerce-write-review-link"
-          style="cursor: pointer;"
+        >|<a class="woocommerce-write-review-link" style="cursor: pointer"
           >Add a review</a
         >
       </div>
@@ -175,12 +174,10 @@
           >
             Add to cart
           </button>
-          <app-spinner
-            *ngIf="isLoading"
-            ></app-spinner>
+          <app-spinner *ngIf="isLoading"></app-spinner>
 
           <a
-            href=""
+            (click)="onReloadUser()"
             class="wc-action-btn view-cart-btn button wc-forward"
             style="padding-top: 15px"
             >View cart</a

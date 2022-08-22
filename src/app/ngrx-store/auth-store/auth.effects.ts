@@ -122,11 +122,33 @@ export class AuthEffects {
         })
     )
 
-    // @Effect()
-    // authRealoadUser = this.actions$.pipe(
-    //     ofType(),
-    //     switchMap()
-    // )
+    @Effect()
+    authRealoadUser = this.actions$.pipe(
+        ofType(AuthActions.RELOAD_USER),
+        switchMap((authData: AuthActions.ReloadUser) => {
+            return this.http
+            .get<AuthResponseData>(
+                baseURL + 'auth/user'
+            ).pipe(
+                tap(resData => {
+
+                }),
+                map(resData => {
+                    return handleAuthentication(
+                        resData.user.id,
+                        resData.user.name,
+                        resData.user.email,
+                        resData.access_token,
+                        resData.user.cart,
+                        resData.user.wishlist
+                    )
+                }),
+                catchError(erroRes => {
+                    return handleError(erroRes)
+                })
+            )
+        })
+    )
 
     @Effect({ dispatch: false})
     authRedirect = this.actions$.pipe(
