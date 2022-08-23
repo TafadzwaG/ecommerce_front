@@ -9,17 +9,8 @@ import { baseURL } from '../../../environments/environment';
 import * as CartActions from './cart.actions'
 
 
-const handleCart = (
-    message: string
-) => {
-    const userData = JSON.parse(localStorage.getItem('userData'))
-    localStorage.setItem('cart', JSON.stringify(userData._cart))
 
-    return new CartActions.AddItemSuccess(
-        message
-    )
-        
-}
+
 
 
 @Injectable()
@@ -39,13 +30,18 @@ export class CartEffects {
                         console.log(resData)
                     }),
                     map(resData => {
-                        return handleCart('Adding item to cart yaita')
+                       return new CartActions.AddItemSuccess('Add to Cart sucessful')
                     }), catchError(errorRes => {
                         return throwError(errorRes)
                     })
                 )
         })
     )
+
+
+
+
+
 
 
 

@@ -2,6 +2,7 @@ import { Component , OnInit} from '@angular/core';
 import { Store } from '@ngrx/store';
 import * as fromApp from './ngrx-store/app.reducer'
 import * as AuthActions from './ngrx-store/auth-store/auth.actions'
+import * as CartActions from './ngrx-store/cart-store/cart.actions'
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -16,5 +17,10 @@ export class AppComponent implements OnInit{
 
   ngOnInit() {
     this.store.dispatch(new AuthActions.AutoLogin())
+
+
+    let cart = JSON.parse(localStorage.getItem('cart'))
+    this.store.dispatch(new CartActions.SetCart(cart.items))
+
   }
 }

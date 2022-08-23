@@ -7,8 +7,18 @@ export const ADDING_ITEM_FAILED = '[Cart] Failed to add item to cart'
 export const ADDING_ITEM_SUCCESS = '[Cart] Addinng item success'
 export const REMOVING_ITEM_SUCCESS = '[Cart] Removing item success'
 export const REMOVING_ITEM_FAILED = '[Cart] Removing item failed'
+export const SET_CART_ITEMS = '[Cart] Set cart'
 
 
+
+
+export class  SetCart implements Action {
+    readonly type = SET_CART_ITEMS
+
+    constructor(
+        public payload : Product []
+    ){}
+}
 
 export class AddItemToCartStart implements Action {
     readonly type = ADD_ITEM_TO_CART_START
@@ -56,6 +66,7 @@ export class RemoveItemFailed implements Action {
 }
 
 export type CartActions =
+    | SetCart
     | AddItemToCartStart
     | AddingItemFailed
     | RemoveItemFailed

@@ -1,17 +1,20 @@
+import { Product } from './../../models/product.model';
 import * as CartActions from './cart.actions'
 
 
 export interface State {
     cartError: string,
     loading: boolean,
-    cart: []
+    cart: {}
+    items: Product[]
     
 }
 
 export const initialCartState: State = {
     cartError: '',
     loading: false,
-    cart: []
+    cart: {},
+    items: []
 }
 
 
@@ -34,6 +37,13 @@ export function cartReducer(
                 loading: false
                 // cart: [...action.payload]
             }
+        case CartActions.SET_CART_ITEMS:
+            return {
+                ...state,
+                cartError: '',
+                items: [...action.payload]
+            }
+        
         case CartActions.ADDING_ITEM_FAILED:
         case CartActions.REMOVE_ITEM_FROM_CART:
         case CartActions.ADDING_ITEM_SUCCESS:

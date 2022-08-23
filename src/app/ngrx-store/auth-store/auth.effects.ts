@@ -5,7 +5,7 @@ import { Actions, ofType, Effect } from '@ngrx/effects';
 import { switchMap, catchError, map, tap } from 'rxjs/operators';
 import { of, throwError } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-
+import * as CartActions from '../cart-store/cart.actions'
 import * as AuthActions from './auth.actions'
 import { User } from 'src/app/models/user.model';
 import { baseURL } from 'src/environments/environment';
@@ -28,6 +28,8 @@ const handleAuthentication = (
 ) => {
     const user = new User(id, name, email, token, cart, wishlist )
     localStorage.setItem('userData', JSON.stringify(user))
+
+   
     return new AuthActions.AuthenticateSuccess({
         id: id,
         name: name,
@@ -37,6 +39,8 @@ const handleAuthentication = (
         wishlist: wishlist,
         redirect: true
     })
+
+    
 }
 
 const handleError = (errorRes: any) => {
@@ -83,6 +87,8 @@ export class AuthEffects {
                             resData.user.cart,
                             resData.user.wishlist
                         )
+
+                        
                         
                     }), catchError(errorRes => {
                         return handleError(errorRes)
@@ -105,7 +111,7 @@ export class AuthEffects {
                     }
                 ).pipe(
                     tap(resData => {
-
+                       
                     }),
                     map(resData => {
                         return handleAuthentication(
@@ -116,6 +122,7 @@ export class AuthEffects {
                             resData.user.cart,
                             resData.user.wishlist
                         )
+                       
                     }),
                     catchError(errorRes => {
                         return handleError(errorRes)
