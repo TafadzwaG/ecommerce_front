@@ -1,0 +1,220 @@
+<div class="cart-collaterals">
+    <div class="cart_totals">
+      <div class="cart_totals_toggle">
+        <div class="card card-default">
+          <h4
+            class="card-sub-title text-md text-uppercase m-b-md pb-1"
+          >
+            Cart totals
+          </h4>
+          <div id="panel-cart-total">
+            <div class="card-body p-0">
+              <table
+                class="responsive cart-total"
+                cellspacing="0"
+              >
+                <tbody>
+                  <tr class="cart-subtotal">
+                    <th><h4 class="mb-0">Subtotal</h4></th>
+                    <td>
+                      <span
+                        class="woocommerce-Price-amount amount"
+                        ><bdi
+                          ><span
+                            class="woocommerce-Price-currencySymbol"
+                            >$</span
+                          >666.00</bdi
+                        ></span
+                      >
+                    </td>
+                  </tr>
+
+                  <tr class="">
+                    <th colspan="2">
+                      <h4 class="m-b-sm">Shipping</h4>
+                      <ul
+                        id="shipping_method"
+                        class="woocommerce-shipping-methods mb-2"
+                      >
+                        <li>
+                          <div class="porto-radio">
+                            <input
+                              type="radio"
+                              name="shipping_method[0]"
+                              data-index="0"
+                              id="shipping_method_0_free_shipping1"
+                              value="free_shipping:1"
+                              class="shipping_method porto-control-input"
+                              checked="checked"
+                            /><label
+                              class="porto-control-label"
+                              for="shipping_method_0_free_shipping1"
+                              >Free shipping</label
+                            >
+                          </div>
+                        </li>
+                        <li>
+                          <div class="porto-radio">
+                            <input
+                              type="radio"
+                              name="shipping_method[0]"
+                              data-index="0"
+                              id="shipping_method_0_local_pickup2"
+                              value="local_pickup:2"
+                              class="shipping_method porto-control-input"
+                            /><label
+                              class="porto-control-label"
+                              for="shipping_method_0_local_pickup2"
+                              >Local pickup</label
+                            >
+                          </div>
+                        </li>
+                        <li>
+                          <div class="porto-radio">
+                            <input
+                              type="radio"
+                              name="shipping_method[0]"
+                              data-index="0"
+                              id="shipping_method_0_flat_rate3"
+                              value="flat_rate:3"
+                              class="shipping_method porto-control-input"
+                            /><label
+                              class="porto-control-label"
+                              for="shipping_method_0_flat_rate3"
+                              >Flat rate:
+                              <span
+                                class="woocommerce-Price-amount amount"
+                                ><bdi
+                                  ><span
+                                    class="woocommerce-Price-currencySymbol"
+                                    >$</span
+                                  >5.00</bdi
+                                ></span
+                              ></label
+                            >
+                          </div>
+                        </li>
+                      </ul>
+                      <p
+                        class="woocommerce-shipping-destination"
+                      >
+                        Shipping to <strong>CA</strong>.
+                      </p>
+
+                      <form
+                        class="woocommerce-shipping-calculator shipping_calculator"
+                        action="https://www.portotheme.com/wordpress/porto/shop1/cart/"
+                        method="post"
+                      >
+                        <section
+                          class="shipping-calculator-form"
+                          style="display: none"
+                        >
+                          <p
+                            class="form-row form-row-wide"
+                            id="calc_shipping_country_field"
+                          >
+                           
+                          </p>
+
+                          <p
+                            class="form-row validate-required form-row-wide address-field"
+                            id="calc_shipping_state_field"
+                          >
+                            <span>
+                             
+                            </span>
+                          </p>
+
+                          <p
+                            class="form-row validate-required form-row-wide address-field"
+                            id="calc_shipping_city_field"
+                          >
+                            <input
+                              type="text"
+                              class="input-text"
+                              value=""
+                              placeholder="Town / City"
+                              name="calc_shipping_city"
+                              id="calc_shipping_city"
+                              data-placeholder="Town / City"
+                            />
+                          </p>
+
+                          <p
+                            class="form-row validate-required form-row-wide address-field"
+                            id="calc_shipping_postcode_field"
+                          >
+                            <input
+                              type="text"
+                              class="input-text"
+                              value=""
+                              placeholder="ZIP Code"
+                              name="calc_shipping_postcode"
+                              id="calc_shipping_postcode"
+                              data-placeholder="ZIP Code"
+                            />
+                          </p>
+
+                          <p>
+                            <button
+                              type="submit"
+                              name="calc_shipping"
+                              value="1"
+                              class="button wc-action-btn mb-3"
+                            >
+                              Update totals
+                            </button>
+                          </p>
+
+                          <input
+                            type="hidden"
+                            id="woocommerce-shipping-calculator-nonce"
+                            name="woocommerce-shipping-calculator-nonce"
+                            value="9d882d5b3f"
+                          /><input
+                            type="hidden"
+                            name="_wp_http_referer"
+                            value="/wordpress/porto/shop1/cart/"
+                          />
+                        </section>
+                      </form>
+                    </th>
+                  </tr>
+
+                  <tr class="order-total">
+                    <th>
+                      <h4 class="text-md mb-0">Total</h4>
+                    </th>
+                    <td>
+                      <strong
+                        ><span
+                          class="woocommerce-Price-amount amount"
+                          ><bdi
+                            ><span
+                              class="woocommerce-Price-currencySymbol"
+                              >$</span
+                            >666.00</bdi
+                          ></span
+                        ></strong
+                      >
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <div class="wc-proceed-to-checkout">
+                <a
+                  href="https://www.portotheme.com/wordpress/porto/shop1/checkout/"
+                  class="btn btn-v-dark w-100 m-t-lg py-3"
+                  >Proceed to checkout<i
+                    class="vc_btn3-icon fas fa-arrow-right ps-3"
+                  ></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

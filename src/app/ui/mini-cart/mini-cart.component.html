@@ -1,93 +1,93 @@
-<div class="mini-cart">
-  <div class="cart-design-7 widget-design-3"
-    (mouseover)="hover = true"
-    (mouseleave)="hover = false"
-    >
-    <a [routerLink]="['/cart']" class="icon-cart-header">
-      <i class="icon-mini-cart"></i
-      ><span class="cart-total"
-        ><span class="cart-qty">{{ cart_items }}</span><span>item(s)</span></span
-      >
+<div id="mini-cart" class="mini-cart minicart-arrow-alt">
+  <div class="cart-head">
+    <a [routerLink]="['/cart']">
+      <span class="cart-icon"
+        ><i class="minicart-icon porto-icon-cart-thick"></i
+        ><span class="cart-items">{{ cart_items }}</span></span
+      ><span class="cart-items-text">{{ cart_items }} item</span>
     </a>
-
-    <div
-      class="cart-wrapper theme-border-color"
-      style="display: block"
-      *ngIf="hover"
-    >
-      <div class="cart-inner">
-        <div class="cart-inner-content">
-          <div class="cart-content">
-            <div class="total-count">
-              <span v-if="cart_total_qty > 0">
-                cart_total_qty <span> item(s)</span></span
-              >
-              <span else>0<span> item(s)</span></span>
-
-              <a href="#" class="btn-button view-cart bordered uppercase">
-                <span>View cart</span>
-              </a>
-            </div>
-
-            <p class="no-items-in-cart">
-              You have no items in your shopping cart.
-            </p>
-
-            <ul v-else class="clearfix">
-              <li class="item-cart">
-                <a class="product-image">
-                  <img
-                    class="lazyloaded"
-                    data-src="#"
-                    alt="product image"
-                    src="#"
-                  />
-                </a>
-                <div class="product-details row-fluid show-grid">
-                  <p class="product-name">
-                    <a>
-                      <span>
-                        <span>productname</span>
-                      </span>
-                    </a>
-                  </p>
-                  <div class="items">
-                    <span class="price"
-                      >item.quantity ×
-                      <span class="amount"
-                        ><span class="money">$</span></span
-                      ></span
-                    >
-                  </div>
-                  <div class="access">
-                    <a
-                      href="#"
-                      class="btn-remove btn-remove-cart"
-                      title="Remove item"
-                      ><i class="icon-cancel"></i
-                    ></a>
-                  </div>
-                </div>
-                <div class="ajax-loading"></div>
-              </li>
-            </ul>
-          </div>
-
-          <div class="cart-checkout">
-            <div class="cart-info">
-              <p class="subtotal">
-                <span class="label">Total:</span>
-                <span class="price"><span class="money">$</span></span>
-              </p>
-            </div>
-            <div class="actions">
-              <a href="#" class="btn-button bordered uppercase checkout-cart">
-                <span>Checkout</span>
-              </a>
-            </div>
-          </div>
-        </div>
+  </div>
+  <div class="cart-popup widget_shopping_cart">
+    <div class="widget_shopping_cart_content">
+      <div class="total-count text-v-dark clearfix">
+        <span>1 ITEM</span
+        ><a
+          class="text-v-dark pull-right text-uppercase"
+          href="https://www.portotheme.com/wordpress/porto/shop1/cart/"
+          >View cart</a
+        >
       </div>
+      <ul class="cart_list product_list_widget scrollbar-inner">
+        <li
+          class="woocommerce-mini-cart-item porto-variation-2093 mini_cart_item"
+        >
+          <div class="product-image">
+            <div class="inner">
+              <a
+                href="https://www.portotheme.com/wordpress/porto/shop1/product/laptop-case-bag/?attribute_pa_color=black&amp;attribute_pa_size=large"
+                aria-label="product"
+              >
+                <img
+                  width="150"
+                  height="150"
+                  src="//www.portotheme.com/wordpress/porto/shop1/wp-content/uploads/sites/77/2013/06/product-56-150x150.jpg"
+                  class="attachment-woocommerce_gallery_thumbnail size-woocommerce_gallery_thumbnail"
+                  alt=""
+                  loading="lazy"
+                />
+              </a>
+            </div>
+          </div>
+          <div class="product-details">
+            <a
+              href="https://www.portotheme.com/wordpress/porto/shop1/product/laptop-case-bag/?attribute_pa_color=black&amp;attribute_pa_size=large"
+              class="text-v-dark"
+            >
+              Laptop Case Bag - Black, Large
+            </a>
+            <span class="quantity"
+              >1 ×
+              <span class="woocommerce-Price-amount amount"
+                ><bdi
+                  ><span class="woocommerce-Price-currencySymbol">$</span
+                  >666.00</bdi
+                ></span
+              ></span
+            >
+            <a
+              href="https://www.portotheme.com/wordpress/porto/shop1/cart/?remove_item=b2656853f587a8c30dc5ce8053a3c04d&amp;_wpnonce=d9111288bc"
+              class="remove remove-product"
+              aria-label="Remove this item"
+              data-product_id="605"
+              data-cart_id="b2656853f587a8c30dc5ce8053a3c04d"
+              data-product_sku="654613612"
+            ></a>
+          </div>
+          <div class="ajax-loading"></div>
+        </li>
+      </ul>
+      <!-- end product list -->
+
+      <p class="woocommerce-mini-cart__total total">
+        <strong>Subtotal:</strong>
+        <span class="woocommerce-Price-amount amount"
+          ><bdi
+            ><span class="woocommerce-Price-currencySymbol">$</span>666.00</bdi
+          ></span
+        >
+      </p>
+
+      <p class="woocommerce-mini-cart__buttons buttons">
+        <a
+          href="https://www.portotheme.com/wordpress/porto/shop1/cart/"
+          class="button wc-forward"
+          >View cart</a
+        ><a
+          href="https://www.portotheme.com/wordpress/porto/shop1/checkout/"
+          class="button checkout wc-forward"
+          >Checkout</a
+        >
+      </p>
     </div>
   </div>
 </div>

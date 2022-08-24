@@ -11,6 +11,7 @@ export const REMOVING_ITEM_FAILED = '[Cart] Removing item failed'
 export const SET_CART_ITEMS = '[Cart] Set cart items'
 export const FETCH_CART_FAILED = '[Cart] Fetch Cart failed'
 export const FETCH_CART = '[Cart] Fetch Cart'
+export const CLEAR_CART = '[Cart] Clear Cart'
 
 
 export class FetchCart implements Action {
@@ -22,6 +23,10 @@ export class FetchCartFailed implements Action {
     constructor(
         public payload: string
     ){}
+}
+
+export class ClearCart implements Action {
+    readonly type = CLEAR_CART
 }
 
 
@@ -92,3 +97,4 @@ export type CartActions =
     | AddItemSuccess
     | FetchCart
     | FetchCartFailed
+    | ClearCart

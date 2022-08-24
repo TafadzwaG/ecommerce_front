@@ -63,7 +63,13 @@ import { AuthEffects } from './ngrx-store/auth-store/auth.effects';
 import  { BrowserAnimationsModule }  from '@angular/platform-browser/animations';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
-import { ProductDetailStComponent } from './skeletons/product-detail-st/product-detail-st.component'
+import { ProductDetailStComponent } from './skeletons/product-detail-st/product-detail-st.component';
+import { CartItemCardComponent } from './pages/cart/cart-item-card/cart-item-card.component';
+import { CartItemsComponent } from './pages/cart/cart-items/cart-items.component';
+import { CartTotalCardComponent } from './pages/cart/cart-total-card/cart-total-card.component';
+import { EmptyCartComponent } from './pages/cart/empty-cart/empty-cart.component';
+import { CartBreadCrumbComponent } from './pages/cart/cart-bread-crumb/cart-bread-crumb.component';
+import { ActionsComponent } from './pages/cart/actions/actions.component'
 
 @NgModule({
   declarations: [
@@ -117,6 +123,12 @@ import { ProductDetailStComponent } from './skeletons/product-detail-st/product-
     AccountBreadCrumbComponent,
     SpinnerComponent,
     ProductDetailStComponent,
+    CartItemCardComponent,
+    CartItemsComponent,
+    CartTotalCardComponent,
+    EmptyCartComponent,
+    CartBreadCrumbComponent,
+    ActionsComponent,
   ],
   imports: [
     BrowserModule,

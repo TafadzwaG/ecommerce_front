@@ -1,0 +1,26 @@
+.mini-cart .cart-wrapper {
+    display: none !important;
+  }
+  
+  .checkout-cart {
+    min-height: 250px;
+  }
+  
+  i.cart-empty {
+    font-size: 100px;
+    color: #d3d3d4;
+  }
+  
+  .btn-go-shop {
+    min-width: 200px;
+    padding: 16px 0;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    text-align: center;
+    color: #fff;
+    border: none;
+    line-height: 1.5;
+    display: inline-block;
+    text-transform: uppercase;
+  }

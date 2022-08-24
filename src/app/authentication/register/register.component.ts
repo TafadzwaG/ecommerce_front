@@ -10,6 +10,7 @@ import { Subscription } from 'rxjs';
 import { Store } from '@ngrx/store';
 import * as fromApp from '../../ngrx-store/app.reducer'
 import * as AuthActions from '../../ngrx-store/auth-store/auth.actions'
+import * as CartActions from '../../ngrx-store/cart-store/cart.actions'
 
 
 @Component({
@@ -57,7 +58,10 @@ export class RegisterComponent implements OnInit {
       password,
       password_confirmation
     }))
-    // form.reset();
+
+    this.store.dispatch(new CartActions.FetchCart())
+    form.reset();
+
   }
 
 

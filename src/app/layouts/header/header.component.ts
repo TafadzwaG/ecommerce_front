@@ -5,6 +5,7 @@ import { select, Store } from '@ngrx/store';
 import * as fromApp from '../../ngrx-store/app.reducer';
 import * as AuthActions from '../../ngrx-store/auth-store/auth.actions';
 import { selectUsername } from '../../ngrx-store/auth-store/auth.selectors'
+import * as CartActions from '../../ngrx-store/cart-store/cart.actions'
 
 
 @Component({
@@ -38,5 +39,6 @@ export class HeaderComponent implements OnInit {
 
   onLogout(): void {
     this.store.dispatch(new AuthActions.Logout());
+    this.store.dispatch(new CartActions.ClearCart())
   }
 }

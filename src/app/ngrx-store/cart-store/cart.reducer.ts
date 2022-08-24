@@ -65,6 +65,12 @@ export function cartReducer(
                 cartError: '',
                 items: state.items.filter( item => item.id !== action.payload)
             }
+        case CartActions.CLEAR_CART:
+            return {
+                ...state,
+                cartError: '',
+                items: []
+            }
         case CartActions.ADDING_ITEM_SUCCESS:
         case CartActions.REMOVING_ITEM_FAILED:
         default:

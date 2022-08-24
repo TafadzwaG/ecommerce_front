@@ -2,6 +2,8 @@ import { NgForm } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import * as fromApp from '../../ngrx-store/app.reducer'
 import * as AuthActions from '../../ngrx-store/auth-store/auth.actions'
+import * as CartActions from '../../ngrx-store/cart-store/cart.actions'
+
 import { Subscription } from 'rxjs';
 import { Store } from '@ngrx/store';
 
@@ -47,6 +49,8 @@ export class LoginComponent implements OnInit {
       email,
       password
     }))
+
+    this.store.dispatch(new CartActions.FetchCart())
 
   }
 
