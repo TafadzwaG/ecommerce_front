@@ -1,3 +1,4 @@
+import { CartItem } from 'src/app/interfaces/item.interface';
 import { Product } from './../../models/product.model';
 import { Action } from '@ngrx/store'
 
@@ -28,7 +29,7 @@ export class  SetCartItems implements Action {
     readonly type = SET_CART_ITEMS
 
     constructor(
-        public payload : Product []
+        public payload : CartItem[]
     ){}
 }
 
@@ -46,6 +47,9 @@ export class AddItemToCartStart implements Action {
 
 export class RemoveItemFromCart implements Action {
     readonly type = REMOVE_ITEM_FROM_CART
+    constructor(
+        public payload: number
+    ){}
 }
 
 export class AddingItemFailed implements Action {

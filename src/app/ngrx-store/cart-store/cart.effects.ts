@@ -28,7 +28,6 @@ export class CartEffects {
             console.log(resData.data);
           }),
           switchMap((resData) => [
-            new CartActions.SetCartItems(resData.data.items),
             new CartActions.AddItemSuccess('Add to Cart sucessful'),
           ]),
           catchError((errorRes) => {
@@ -38,20 +37,24 @@ export class CartEffects {
     })
   );
 
+//   removeItemfromCart$ = this.actions$.pipe(
+//     ofType
+//   )
+
   @Effect()
   fetchCart = this.actions$.pipe(
     ofType(CartActions.FETCH_CART),
     switchMap((fetchCartAction: CartActions.FetchCart) => {
       return this.http.get<any>(baseURL + 'cart').pipe(
         map((resData) => {
+          console.log(resData.data.items);
           localStorage.setItem('cartItems', JSON.stringify(resData.data.items));
           return new CartActions.SetCartItems(resData.data.items);
-        }),   
+        })
       );
     })
   );
-  
- 
+
   constructor(
     private actions$: Actions,
     private http: HttpClient,

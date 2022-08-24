@@ -1,3 +1,4 @@
+import { CartItem } from 'src/app/interfaces/item.interface';
 import { CartInterface } from './../../interfaces/cart-interface';
 import { Product } from './../../models/product.model';
 import * as CartActions from './cart.actions'
@@ -7,7 +8,7 @@ export interface State {
     cartError: string,
     loading: boolean,
     cart: CartInterface | {}
-    items: Product[]
+    items: CartItem []
     
 }
 
@@ -53,7 +54,17 @@ export function cartReducer(
             }
         
         case CartActions.ADDING_ITEM_FAILED:
+            return {
+                ...state,
+                cartError: action.payload,
+                loading: false
+            }
         case CartActions.REMOVE_ITEM_FROM_CART:
+            return {
+                ...state,
+                cartError: '',
+                items: state.items.filter( item => item.id !== action.payload)
+            }
         case CartActions.ADDING_ITEM_SUCCESS:
         case CartActions.REMOVING_ITEM_FAILED:
         default:

@@ -1,9 +1,8 @@
-import { State } from './../auth-store/auth.reducer';
-import { createFeatureSelector, createSelector } from '@ngrx/store'
+import {  createSelector } from '@ngrx/store'
 import { AppState } from '../app.reducer'
 
 
-export const getAuthUserState = ( state: AppState) => state.auth
+export const getAuthUserState = (state: AppState) => state.auth
 
 
 
