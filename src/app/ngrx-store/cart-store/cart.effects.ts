@@ -6,12 +6,7 @@ import { switchMap, catchError, map, tap } from 'rxjs/operators';
 import { of, throwError } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { baseURL } from '../../../environments/environment';
-import * as CartActions from './cart.actions'
-
-
-
-
-
+import * as CartActions from './cart.actions';
 
 @Injectable()
 export class CartEffects {
@@ -21,36 +16,47 @@ export class CartEffects {
         switchMap((addToCartAction: CartActions.AddItemToCartStart) => {
             return this.http
                 .post<AddToCartResponse>(
-                    baseURL + 'carts/' + 12, {
+                    baseURL + 'carts/' + addToCartAction.payload.cart_id,
+                    {
                         product_id: addToCartAction.payload.product_id,
-                        quantity: addToCartAction.payload.quantity
+                        quantity: addToCartAction.payload.quantity,
                     }
-                ).pipe(
-                    tap(resData => {
-                        console.log(resData)
-                    }),
-                    map(resData => {
-                       return new CartActions.AddItemSuccess('Add to Cart sucessful')
-                    }), catchError(errorRes => {
-                        return throwError(errorRes)
-                    })
                 )
+                .pipe(
+                    tap((resData) => { console.log(resData.data) }),
+                    switchMap((resData) => [
+                        new CartActions.SetCartItems(resData.data.items),
+                        new CartActions.AddItemSuccess('Add to Cart sucessful'),
+                    ]),
+                    catchError((errorRes) => {
+                        return throwError(errorRes);
+                    })
+                );
         })
+    );
+
+
+    @Effect()
+    fetchCart = this.actions$.pipe(
+        ofType(CartActions.FETCH_CART),
+        switchMap((fetchCartAction: CartActions.FetchCart) => {
+            return this.http.get<any>(
+                baseURL + 'cart'
+            )
+            .pipe(map (resData => {
+                
+                // console.log(resData.data.items)
+                return new CartActions.SetCartItems(resData.data.items)
+            }))
+        })
+        
+
+
     )
-
-
-
-
-
-
-
-
-
 
     constructor(
         private actions$: Actions,
         private http: HttpClient,
-        private router: Router,
+        private router: Router
     ) { }
-    
 }

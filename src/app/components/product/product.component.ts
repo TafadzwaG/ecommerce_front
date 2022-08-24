@@ -30,19 +30,21 @@ export class ProductComponent implements OnInit {
     )
   }
 
-  onAddToCart(product_id: number, quantity: number): void {
+  onAddToCart(product_id: number, quantity: number, cart_id: number): void {
 
     this.store.dispatch(new CartActions.AddItemToCartStart({
       product_id,
-      quantity
+      quantity,
+      cart_id
     }))
 
-    this.store.dispatch( new AuthActions.ReloadUser())
+    this.store.dispatch(new CartActions.FetchCart())
     
   }
 
-  onReloadUser(): void {
-    this.store.dispatch( new AuthActions.ReloadUser())
+  onReloadUser() {
+    // this.store.dispatch( new AuthActions.ReloadUser())
+    this.store.dispatch(new CartActions.FetchCart())
   }
 
 }

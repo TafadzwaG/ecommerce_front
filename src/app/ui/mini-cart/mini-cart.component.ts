@@ -1,5 +1,8 @@
+import { Subscription } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
-
+import { Store } from '@ngrx/store';
+import * as CartActions from '../../ngrx-store/cart-store/cart.actions'
+import * as fromApp from '../../ngrx-store/app.reducer'
 @Component({
   selector: 'app-mini-cart',
   templateUrl: './mini-cart.component.html',
@@ -8,20 +11,26 @@ import { Component, OnInit } from '@angular/core';
 export class MiniCartComponent implements OnInit {
 
   public hover : boolean = false
+  private storeSubscription: Subscription
+  public cart_items : number | 0
 
-  public cart_items = 0
-
-  constructor() { }
-
-  getCartItems(){
-    let cart = JSON.parse(localStorage.getItem('cart')) 
-
-    this.cart_items = cart.items.length
-    
+  constructor(
+    private store : Store<fromApp.AppState>
+  ) { 
+    this.storeSubscription = Subscription.EMPTY
   }
 
+  
+
   ngOnInit(): void {
-    this.getCartItems()
+    this.storeSubscription = this.store.select('cart').subscribe(
+      cartState => {
+        this.cart_items = cartState.items.length
+        console.log(this.cart_items)
+      }
+    )
+
+
   }
 
 }

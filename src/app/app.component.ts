@@ -20,7 +20,9 @@ export class AppComponent implements OnInit{
 
 
     let cart = JSON.parse(localStorage.getItem('cart'))
-    this.store.dispatch(new CartActions.SetCart(cart.items))
+    this.store.dispatch(new CartActions.SetCartItems(cart.items))
+
+    
 
   }
 }

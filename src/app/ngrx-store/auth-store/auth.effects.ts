@@ -143,6 +143,7 @@ export class AuthEffects {
 
                 }),
                 map(resData => {
+                    localStorage.setItem('username', resData.user.name)
                     return handleAuthentication(
                         resData.user.id,
                         resData.user.name,

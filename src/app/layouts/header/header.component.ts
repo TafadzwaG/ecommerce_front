@@ -1,9 +1,12 @@
+import { selectUsername } from './../../ngrx-store/auth-store/auth.selectors';
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { Subscription, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Store } from '@ngrx/store';
+import { select, Store } from '@ngrx/store';
 import * as  fromApp from '../../ngrx-store/app.reducer'
 import * as AuthActions from '../../ngrx-store/auth-store/auth.actions'
+
+
 
 @Component({
   selector: 'app-header',
@@ -14,11 +17,15 @@ export class HeaderComponent implements OnInit {
 
   public isAuthenticated = false;
   private userSubscription : Subscription;
+  public userName: Observable<string> | 'User'
+ 
+
 
   constructor(
     private store: Store<fromApp.AppState>
   ) { 
     this.userSubscription = Subscription.EMPTY
+    
   }
 
   ngOnInit(): void {
@@ -28,6 +35,10 @@ export class HeaderComponent implements OnInit {
       this.isAuthenticated = !!user
 
     })
+    
+    //Sunscription to cart
+   
+
   }
 
   ngOnDestroy(): void {

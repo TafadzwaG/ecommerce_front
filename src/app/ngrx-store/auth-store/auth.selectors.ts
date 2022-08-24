@@ -1,14 +1,35 @@
 import { State } from './../auth-store/auth.reducer';
-import { createSelector } from '@ngrx/store'
+import { createFeatureSelector, createSelector } from '@ngrx/store'
 
-export const selectUsername = (state: State) => state.user.name 
+export const getAuthUserState = createFeatureSelector<State>('auth')
 
-export const isAuthenticated = (state: State) => !!state.user.token
 
-export const userEmail = (state: State) => state.user.email
 
-export const selectCartInUser = (state : State ) => state.user.cart
+export const selectUsername = createSelector(
+    getAuthUserState,
+    (state: State) => state.user.name 
+)
 
-export const selectWishListInUser = (state: State) => state.user.wishlist
+export const isAuthenticated = createSelector(
+    getAuthUserState,
+    (state: State) => !!state.user.token
+)
+
+export const userEmail = createSelector(
+    getAuthUserState,
+    (state: State) => state.user.email
+)
+
+export const selectCartInUser =   createSelector( 
+    getAuthUserState, 
+    (state : State ) => state.user.cart
+)
+
+export const selectWishListInUser =  createSelector(
+    getAuthUserState, 
+    (state: State) => state.user.wishlist
+)
+
+
 
 
