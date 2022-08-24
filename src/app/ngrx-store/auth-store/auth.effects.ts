@@ -223,6 +223,7 @@ export class AuthEffects {
         ofType(AuthActions.LOGOUT),
         tap(()=> {
             localStorage.removeItem('userData');
+            localStorage.removeItem('cartItems');
             this.router.navigate(['/login'])
         })
     )

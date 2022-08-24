@@ -8,11 +8,19 @@ export const ADDING_ITEM_SUCCESS = '[Cart] Addinng item success'
 export const REMOVING_ITEM_SUCCESS = '[Cart] Removing item success'
 export const REMOVING_ITEM_FAILED = '[Cart] Removing item failed'
 export const SET_CART_ITEMS = '[Cart] Set cart items'
+export const FETCH_CART_FAILED = '[Cart] Fetch Cart failed'
 export const FETCH_CART = '[Cart] Fetch Cart'
 
 
 export class FetchCart implements Action {
     readonly type = FETCH_CART
+}
+
+export class FetchCartFailed implements Action {
+    readonly type = FETCH_CART_FAILED
+    constructor(
+        public payload: string
+    ){}
 }
 
 
@@ -79,3 +87,4 @@ export type CartActions =
     | RemoveItemFromCart
     | AddItemSuccess
     | FetchCart
+    | FetchCartFailed
