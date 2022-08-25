@@ -1,16 +1,19 @@
-<cart-bread-crumb></cart-bread-crumb>
-
 <div id="main" class="column1 boxed">
   <!-- main -->
+  <cart-bread-crumb></cart-bread-crumb>
 
-  <div class="container">
+  <app-empty-cart
+    *ngIf="isEmpyt"
+  > </app-empty-cart>
+
+  <div class="container" *ngIf="!isEmpyt">
     <div class="row main-content-wrap">
       <!-- main content -->
       <div class="main-content col-lg-12">
         <div id="content" role="main">
           <article class="post-208 page type-page status-publish hentry">
             <h2 class="entry-title" style="display: none">Cart</h2>
-            
+
             <div class="page-content">
               <div class="woocommerce">
                 <div class="woocommerce-notices-wrapper"></div>
@@ -21,7 +24,7 @@
                     </div>
 
                     <div class="col-lg-4">
-                        <app-cart-total-card></app-cart-total-card>
+                      <app-cart-total-card></app-cart-total-card>
                     </div>
                   </div>
                 </div>
