@@ -2,7 +2,8 @@ import { Store } from '@ngrx/store';
 import { Component, OnInit } from '@angular/core';
 import { Subscription, map } from 'rxjs';
 import * as fromApp from '../../../ngrx-store/app.reducer';
-import * as CartActions from '../../../ngrx-store/cart-store/cart.actions'
+import * as CartActions from '../../../ngrx-store/cart-store/cart.actions';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-cart-items',
@@ -12,7 +13,8 @@ import * as CartActions from '../../../ngrx-store/cart-store/cart.actions'
 export class CartItemsComponent implements OnInit {
   public cart_items: any = [];
   private authSubscription: Subscription;
-  public quantity = 0
+  public quantity: number = 1;
+  public quantityForm: FormGroup;
 
   imageUrl = 'http://127.0.0.1:8000/storage';
 
@@ -27,31 +29,36 @@ export class CartItemsComponent implements OnInit {
       .subscribe((items) => {
         this.cart_items = items;
       });
+
+    this.quantityForm = new FormGroup({
+      'quantity': new FormControl(this.quantity),
+    });
   }
 
+  quantityIncrease() {
+    this.quantity++;
+    console.log(this.quantity)
+    this.quantityForm.get('quantity')
 
-  quantityIncrease(){
-    
   }
 
-  quantityDecrease(){
-    
+  quantityDecrease() {
+    if (this.quantity < 2) {
+      return;
+    }
+    this.quantity--;
+    console.log(this.quantity)
   }
 
-
-
-
-  calculateSubTotal (quantity: number, price: number) {
+  calculateSubTotal(quantity: number, price: number) {
     let subTotal = 0;
     subTotal = subTotal + quantity * price;
     return subTotal.toFixed(2);
   }
 
-  
-
-  removeItemFromCart(id: number){
-    this.store.dispatch(new CartActions.RemoveItemFromCart(id))
-    this.store.dispatch(new CartActions.RemoveItemFromCartOnServer(id))
+  removeItemFromCart(id: number) {
+    this.store.dispatch(new CartActions.RemoveItemFromCart(id));
+    this.store.dispatch(new CartActions.RemoveItemFromCartOnServer(id));
   }
 
   computeImageString(imageString: string) {

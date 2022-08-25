@@ -30,7 +30,7 @@ import { CtaSmallComponent } from './layouts/home/cta-small/cta-small.component'
 import { CtaContainerComponent } from './ui/cta-container/cta-container.component';
 import { SideBarLinkComponent } from './layouts/home/widget-side-bar/side-bar-link/side-bar-link.component';
 import { SubMenuComponent } from './layouts/home/widget-side-bar/sub-menu/sub-menu.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AdsContainerComponent } from './layouts/home/home-ads/ads-container/ads-container.component';
 import { FeaturedCardComponent } from './components/featured-card/featured-card.component';
@@ -133,6 +133,7 @@ import { ImageCardComponent } from './ui/image-card/image-card.component'
     ImageCardComponent,
   ],
   imports: [
+    ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,

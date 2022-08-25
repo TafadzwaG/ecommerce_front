@@ -1,6 +1,6 @@
 <div class="align-left">
   <div class="box-content">
-    <form class="woocommerce-cart-form">
+    <form class="woocommerce-cart-form" [formGroup]="quantityForm">
       <table
         class="shop_table responsive cart cart-table woocommerce-cart-form__contents"
         cellspacing="0"
@@ -36,7 +36,7 @@
                   (click)="removeItemFromCart(item.id)"
                   class="remove remove-product position-absolute"
                   aria-label="Remove this item"
-                  style="cursor: pointer;"
+                  style="cursor: pointer"
                 ></a>
               </div>
             </td>
@@ -55,7 +55,14 @@
             </td>
             <td class="product-quantity">
               <div class="quantity buttons_added">
-                <button type="button" value="-" class="minus">-</button>
+                <button
+                  type="button"
+                  value="-"
+                  class="minus"
+                  (click)="quantityDecrease()"
+                >
+                  -
+                </button>
                 <input
                   type="number"
                   id="quantity_6306a08994e60"
@@ -63,14 +70,22 @@
                   step="1"
                   min="0"
                   max=""
+                  formControlName="quantity"
                   name="cart[b2656853f587a8c30dc5ce8053a3c04d][qty]"
-                  value="1"
+                  [value]="quantity"
                   title="Qty"
                   size="4"
                   placeholder=""
                   inputmode="numeric"
                 />
-                <button type="button" value="+" class="plus">+</button>
+                <button
+                  type="button"
+                  value="+"
+                  class="plus"
+                  (click)="quantityIncrease()"
+                >
+                  +
+                </button>
               </div>
             </td>
             <td

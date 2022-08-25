@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import * as fromApp from '../../ngrx-store/app.reducer';
@@ -14,7 +15,7 @@ import {
 })
 export class CartComponent implements OnInit {
   public itemsCount$: number;
-  public isEmpyt: boolean = false;
+  public isEmpyt: boolean;
 
   constructor(private store: Store<fromApp.AppState>) {}
 
@@ -23,12 +24,12 @@ export class CartComponent implements OnInit {
 
     this.store.pipe(select(selectCountOfItems)).subscribe((itemsCount) => {
       this.itemsCount$ = itemsCount;
+      console.log(itemsCount)
     });
 
-    if(this.itemsCount$ <= 0){
-      this.isEmpyt = !this.isEmpyt
-    }
+    this.itemsCount$ === 0 ? (this.isEmpyt = true) : (this.isEmpyt = false);
+    
+    console.log(this.isEmpyt)
+  
   }
-
-
 }
