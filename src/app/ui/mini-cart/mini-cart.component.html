@@ -50,6 +50,7 @@
             <a
               (click)="removeItemFromCart(item.id)"
               class="remove remove-product"
+              style="cursor: pointer;"
             ></a>
           </div>
           <div class="ajax-loading"></div>
@@ -61,7 +62,7 @@
         <strong>Subtotal:</strong>
         <span class="woocommerce-Price-amount amount"
           ><bdi
-            ><span class="woocommerce-Price-currencySymbol">$</span>666.00</bdi
+            ><span class="woocommerce-Price-currencySymbol">$</span>{{totalPrice$.toFixed(2)}}</bdi
           ></span
         >
       </p>
