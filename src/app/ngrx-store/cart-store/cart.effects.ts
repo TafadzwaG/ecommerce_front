@@ -1,3 +1,4 @@
+import { baseURL } from 'src/environments/environment';
 import { CartInterface } from './../../interfaces/cart-interface';
 import { AddToCartResponse } from './../../interfaces/add-to-cart-response';
 import { Injectable } from '@angular/core';
@@ -6,7 +7,7 @@ import { Actions, ofType, Effect } from '@ngrx/effects';
 import { switchMap, catchError, map, tap } from 'rxjs/operators';
 import { of, throwError } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { baseURL } from '../../../environments/environment';
+
 import * as CartActions from './cart.actions';
 
 @Injectable()
@@ -37,9 +38,20 @@ export class CartEffects {
     })
   );
 
-//   removeItemfromCart$ = this.actions$.pipe(
-//     ofType
-//   )
+  // @Effect()
+  // removeItemfromCart$ = this.actions$.pipe(
+  //   ofType(CartActions.REMOVE_ITEM_FROM_CART_ON_SERVER),
+  //   switchMap((removeItemOnServer: CartActions.RemoveItemFromCartOnServer) => {
+  //     return this.http
+  //     .post<any>(
+  //       baseURL + 'remove_cart_item/' + removeItemOnServer.payload,{}
+  //     ).pipe(
+  //       tap((resData)=> {
+  //         console.log(resData)
+  //       })
+  //     )
+  //   })
+  // )
 
   @Effect()
   fetchCart = this.actions$.pipe(

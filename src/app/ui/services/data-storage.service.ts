@@ -55,6 +55,18 @@ export class DataStorageService {
     }))
   }
 
+  removeItemFromCart(id: number){
+    return this.http.post<any>(baseURL + '/remove_cart_item/' + id, {})
+    .pipe(map(res => {
+      console.log(res)
+    }), 
+      catchError(erroRes => {
+        return throwError(erroRes)
+      })
+    )
+
+  }
+
   getLatestProducts(){
     return this.http.get<any>(baseURL + 'latest_products')
     .pipe(map( latest_products => {

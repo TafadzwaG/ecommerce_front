@@ -5,17 +5,15 @@
         <div class="onhot">Hot</div>
       </div>
       <div class="inner" *ngIf="feature.product_images[0]">
-        <div 
-        [style]="
-          'height: 170px; background-size: cover;background-repeat: no-repeat;background-position:  
+        <div
+          [style]="
+            'height: 170px; background-size: cover;background-repeat: no-repeat;background-position:  
           center; background-color: rgba(0, 0, 0, 0);  background-image:  url(&quot;' +
-          imageUrl +
-          feature.product_images[0].image +
-          '&quot;);'
-        "
-        >
-
-        </div>
+            imageUrl +
+            feature.product_images[0].image +
+            '&quot;);'
+          "
+        ></div>
       </div>
     </a>
     <div class="links-on-image">
@@ -62,7 +60,10 @@
     <span class="category-list">
       <a>{{ feature.categories[0].name }}</a></span
     >
-    <a class="product-loop-title" [routerLink]="['/product_detail/' + feature.id]" >
+    <a
+      class="product-loop-title"
+      [routerLink]="['/product_detail/' + feature.id]"
+    >
       <h3 class="woocommerce-loop-product__title">{{ feature.name }}</h3>
     </a>
 

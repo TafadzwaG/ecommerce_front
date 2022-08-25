@@ -69,7 +69,8 @@ import { CartItemsComponent } from './pages/cart/cart-items/cart-items.component
 import { CartTotalCardComponent } from './pages/cart/cart-total-card/cart-total-card.component';
 import { EmptyCartComponent } from './pages/cart/empty-cart/empty-cart.component';
 import { CartBreadCrumbComponent } from './pages/cart/cart-bread-crumb/cart-bread-crumb.component';
-import { ActionsComponent } from './pages/cart/actions/actions.component'
+import { ActionsComponent } from './pages/cart/actions/actions.component';
+import { ImageCardComponent } from './ui/image-card/image-card.component'
 
 @NgModule({
   declarations: [
@@ -129,6 +130,7 @@ import { ActionsComponent } from './pages/cart/actions/actions.component'
     EmptyCartComponent,
     CartBreadCrumbComponent,
     ActionsComponent,
+    ImageCardComponent,
   ],
   imports: [
     BrowserModule,

@@ -13,28 +13,20 @@
         <span>1 ITEM</span
         ><a
           class="text-v-dark pull-right text-uppercase"
-          href="https://www.portotheme.com/wordpress/porto/shop1/cart/"
+          [routerLink]="['/cart']"
           >View cart</a
         >
       </div>
       <ul class="cart_list product_list_widget scrollbar-inner">
         <li
           class="woocommerce-mini-cart-item porto-variation-2093 mini_cart_item"
+          *ngFor="let item of items; let i = index"
         >
           <div class="product-image">
             <div class="inner">
-              <a
-                href="https://www.portotheme.com/wordpress/porto/shop1/product/laptop-case-bag/?attribute_pa_color=black&amp;attribute_pa_size=large"
-                aria-label="product"
-              >
-                <img
-                  width="150"
-                  height="150"
-                  src="//www.portotheme.com/wordpress/porto/shop1/wp-content/uploads/sites/77/2013/06/product-56-150x150.jpg"
-                  class="attachment-woocommerce_gallery_thumbnail size-woocommerce_gallery_thumbnail"
-                  alt=""
-                  loading="lazy"
-                />
+              <a [routerLink]="['/product_detail/' + item.product.id]">
+                <app-image-card [image]="item.product.product_images[0].image">
+                </app-image-card>
               </a>
             </div>
           </div>
@@ -43,24 +35,22 @@
               href="https://www.portotheme.com/wordpress/porto/shop1/product/laptop-case-bag/?attribute_pa_color=black&amp;attribute_pa_size=large"
               class="text-v-dark"
             >
-              Laptop Case Bag - Black, Large
+              {{ item.product.name }}
             </a>
             <span class="quantity"
               >1 ×
-              <span class="woocommerce-Price-amount amount"
+              <span
+                class="woocommerce-Price-amount amount"
+                style="margin-top: 6px"
                 ><bdi
-                  ><span class="woocommerce-Price-currencySymbol">$</span
-                  >666.00</bdi
+                  ><span class="woocommerce-Price-currencySymbol"> $</span
+                  >{{ item.product.price.toFixed(2) }}</bdi
                 ></span
               ></span
             >
             <a
-              href="https://www.portotheme.com/wordpress/porto/shop1/cart/?remove_item=b2656853f587a8c30dc5ce8053a3c04d&amp;_wpnonce=d9111288bc"
+              (click)="removeItemFromCart(item.id)"
               class="remove remove-product"
-              aria-label="Remove this item"
-              data-product_id="605"
-              data-cart_id="b2656853f587a8c30dc5ce8053a3c04d"
-              data-product_sku="654613612"
             ></a>
           </div>
           <div class="ajax-loading"></div>
@@ -78,10 +68,7 @@
       </p>
 
       <p class="woocommerce-mini-cart__buttons buttons">
-        <a
-          href="https://www.portotheme.com/wordpress/porto/shop1/cart/"
-          class="button wc-forward"
-          >View cart</a
+        <a [routerLink]="['/cart']" class="button wc-forward">View cart</a
         ><a
           href="https://www.portotheme.com/wordpress/porto/shop1/checkout/"
           class="button checkout wc-forward"

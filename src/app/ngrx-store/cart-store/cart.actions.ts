@@ -12,6 +12,7 @@ export const SET_CART_ITEMS = '[Cart] Set cart items'
 export const FETCH_CART_FAILED = '[Cart] Fetch Cart failed'
 export const FETCH_CART = '[Cart] Fetch Cart'
 export const CLEAR_CART = '[Cart] Clear Cart'
+export const REMOVE_ITEM_FROM_CART_ON_SERVER = '[Cart] Remove item from cart'
 
 
 export class FetchCart implements Action {
@@ -27,6 +28,13 @@ export class FetchCartFailed implements Action {
 
 export class ClearCart implements Action {
     readonly type = CLEAR_CART
+}
+
+export class RemoveItemFromCartOnServer implements Action {
+    readonly type = REMOVE_ITEM_FROM_CART_ON_SERVER
+    constructor(
+        public payload: number
+    ){}
 }
 
 
@@ -98,3 +106,4 @@ export type CartActions =
     | FetchCart
     | FetchCartFailed
     | ClearCart
+    | RemoveItemFromCartOnServer
