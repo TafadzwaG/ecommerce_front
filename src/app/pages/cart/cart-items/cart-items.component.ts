@@ -12,6 +12,7 @@ import * as CartActions from '../../../ngrx-store/cart-store/cart.actions'
 export class CartItemsComponent implements OnInit {
   public cart_items: any = [];
   private authSubscription: Subscription;
+  public quantity = 0
 
   imageUrl = 'http://127.0.0.1:8000/storage';
 
@@ -28,10 +29,21 @@ export class CartItemsComponent implements OnInit {
       });
   }
 
-  calculateSubTotal(quantity: number, price: number) {
+
+  quantityIncrease(){
+    
+  }
+
+  quantityDecrease(){
+    
+  }
+
+
+
+
+  calculateSubTotal (quantity: number, price: number) {
     let subTotal = 0;
     subTotal = subTotal + quantity * price;
-
     return subTotal.toFixed(2);
   }
 
