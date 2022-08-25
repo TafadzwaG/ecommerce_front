@@ -7,10 +7,12 @@
       ><span class="cart-items-text">{{ cart_items }} item</span>
     </a>
   </div>
-  <div class="cart-popup widget_shopping_cart">
-    <div class="widget_shopping_cart_content">
+  
+  <div class="cart-popup widget_shopping_cart" >
+    
+    <div class="widget_shopping_cart_content" *ngIf="cart_items">
       <div class="total-count text-v-dark clearfix">
-        <span>1 ITEM</span
+        <span>{{ cart_items }} ITEM</span
         ><a
           class="text-v-dark pull-right text-uppercase"
           [routerLink]="['/cart']"
@@ -31,14 +33,11 @@
             </div>
           </div>
           <div class="product-details">
-            <a
-              href="https://www.portotheme.com/wordpress/porto/shop1/product/laptop-case-bag/?attribute_pa_color=black&amp;attribute_pa_size=large"
-              class="text-v-dark"
-            >
+            <a class="text-v-dark">
               {{ item.product.name }}
             </a>
             <span class="quantity"
-              >1 ×
+              >{{ item.quantity}} ×
               <span
                 class="woocommerce-Price-amount amount"
                 style="margin-top: 6px"
@@ -69,11 +68,7 @@
 
       <p class="woocommerce-mini-cart__buttons buttons">
         <a [routerLink]="['/cart']" class="button wc-forward">View cart</a
-        ><a
-          href="https://www.portotheme.com/wordpress/porto/shop1/checkout/"
-          class="button checkout wc-forward"
-          >Checkout</a
-        >
+        ><a class="button checkout wc-forward">Checkout</a>
       </p>
     </div>
   </div>

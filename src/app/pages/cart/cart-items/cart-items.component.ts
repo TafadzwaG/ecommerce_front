@@ -39,6 +39,7 @@ export class CartItemsComponent implements OnInit {
 
   removeItemFromCart(id: number){
     this.store.dispatch(new CartActions.RemoveItemFromCart(id))
+    this.store.dispatch(new CartActions.RemoveItemFromCartOnServer(id))
   }
 
   computeImageString(imageString: string) {

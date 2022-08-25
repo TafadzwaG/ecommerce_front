@@ -38,20 +38,16 @@ export class CartEffects {
     })
   );
 
-  // @Effect()
-  // removeItemfromCart$ = this.actions$.pipe(
-  //   ofType(CartActions.REMOVE_ITEM_FROM_CART_ON_SERVER),
-  //   switchMap((removeItemOnServer: CartActions.RemoveItemFromCartOnServer) => {
-  //     return this.http
-  //     .post<any>(
-  //       baseURL + 'remove_cart_item/' + removeItemOnServer.payload,{}
-  //     ).pipe(
-  //       tap((resData)=> {
-  //         console.log(resData)
-  //       })
-  //     )
-  //   })
-  // )
+  @Effect()
+  removeItemFromCart$ = this.actions$.pipe(
+    ofType(CartActions.REMOVE_ITEM_FROM_CART_ON_SERVER),
+    switchMap((removeItem: CartActions.RemoveItemFromCartOnServer) => {
+      return this.http.delete<any>( baseURL + 'cart_items/' + removeItem.payload)
+      .pipe( map(resData => {
+        return new CartActions.RemoveItemSuccess(resData.message)
+      }))
+    })
+  )
 
   @Effect()
   fetchCart = this.actions$.pipe(
