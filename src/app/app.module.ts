@@ -15,7 +15,6 @@ import { LoginComponent } from './authentication/login/login.component';
 import { RegisterComponent } from './authentication/register/register.component';
 import { AboutComponent } from './pages/about/about.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
-import { MiniCartComponent } from './ui/mini-cart/mini-cart.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { BlogsComponent } from './pages/blogs/blogs.component';
 import { TopNavigationComponent } from './layouts/header/top-navigation/top-navigation.component';
@@ -28,7 +27,6 @@ import { BrandsComponent } from './layouts/home/brands/brands.component';
 import { FilterProductsComponent } from './layouts/home/filter-products/filter-products.component';
 import { SupportComponent } from './layouts/home/support/support.component';
 import { CtaSmallComponent } from './layouts/home/cta-small/cta-small.component';
-import { CtaContainerComponent } from './ui/cta-container/cta-container.component';
 import { SideBarLinkComponent } from './layouts/home/widget-side-bar/side-bar-link/side-bar-link.component';
 import { SubMenuComponent } from './layouts/home/widget-side-bar/sub-menu/sub-menu.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -45,20 +43,13 @@ import { SaleCardComponent } from './components/sale-card/sale-card.component';
 import { ProductDetailComponent } from './pages/product/product-detail/product-detail.component';
 import { ShopComponent } from './pages/shop/shop.component';
 import { ShopBannerCardComponent } from './components/shop-banner-card/shop-banner-card.component';
-import { NavCategoriesComponent } from './ui/nav-categories/nav-categories.component';
-import { PriceFilterComponent } from './ui/price-filter/price-filter.component';
-import { FilterMiniComponent } from './ui/filter-mini/filter-mini.component';
 import { CarouselModule  } from 'ngx-owl-carousel-o';
-import { BreadCrumbComponent } from './ui/bread-crumb/bread-crumb.component';
 import { SideBarRightComponent } from './components/side-bar-right/side-bar-right.component';
 import { TabContainerComponent } from './components/tab-container/tab-container.component';
 import { ReviewFormComponent } from './components/review-form/review-form.component';
 import { ReviewCardComponent } from './components/review-card/review-card.component';
 import { ProductComponent } from './components/product/product.component';
-import { ShareLinksComponent } from './ui/share-links/share-links.component';
 import { ColorSizeComponent } from './components/product/color-size/color-size.component';
-import { AccountBreadCrumbComponent } from './ui/account-bread-crumb/account-bread-crumb.component';
-import { SpinnerComponent } from './ui/spinner/spinner.component'
 import * as fromApp from './ngrx-store/app.reducer'
 import { AuthEffects } from './ngrx-store/auth-store/auth.effects';
 import  { BrowserAnimationsModule }  from '@angular/platform-browser/animations';
@@ -71,7 +62,7 @@ import { CartTotalCardComponent } from './pages/cart/cart-total-card/cart-total-
 import { EmptyCartComponent } from './pages/cart/empty-cart/empty-cart.component';
 import { CartBreadCrumbComponent } from './pages/cart/cart-bread-crumb/cart-bread-crumb.component';
 import { ActionsComponent } from './pages/cart/actions/actions.component';
-import { ImageCardComponent } from './ui/image-card/image-card.component';
+import { UserInterfaceModule } from './ui/user-interface.module';
 
 
 
@@ -85,7 +76,6 @@ import { ImageCardComponent } from './ui/image-card/image-card.component';
     RegisterComponent,
     AboutComponent,
     DashboardComponent,
-    MiniCartComponent,
     CartComponent,
     BlogsComponent,
     TopNavigationComponent,
@@ -98,7 +88,6 @@ import { ImageCardComponent } from './ui/image-card/image-card.component';
     FilterProductsComponent,
     SupportComponent,
     CtaSmallComponent,
-    CtaContainerComponent,
     SideBarLinkComponent,
     SubMenuComponent,
     AdsContainerComponent,
@@ -113,19 +102,14 @@ import { ImageCardComponent } from './ui/image-card/image-card.component';
     ProductDetailComponent,
     ShopComponent,
     ShopBannerCardComponent,
-    NavCategoriesComponent,
-    PriceFilterComponent,
-    FilterMiniComponent,
-    BreadCrumbComponent,
+  
     SideBarRightComponent,
     TabContainerComponent,
     ReviewFormComponent,
     ReviewCardComponent,
     ProductComponent,
-    ShareLinksComponent,
     ColorSizeComponent,
-    AccountBreadCrumbComponent,
-    SpinnerComponent,
+  
     ProductDetailStComponent,
     CartItemCardComponent,
     CartItemsComponent,
@@ -133,13 +117,13 @@ import { ImageCardComponent } from './ui/image-card/image-card.component';
     EmptyCartComponent,
     CartBreadCrumbComponent,
     ActionsComponent,
-    ImageCardComponent,
     
     
   ],
   imports: [
     ReactiveFormsModule,
     BrowserModule,
+    UserInterfaceModule,
     ShopModule,
     AppRoutingModule,
     FormsModule,
