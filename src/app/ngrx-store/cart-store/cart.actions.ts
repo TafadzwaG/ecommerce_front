@@ -13,6 +13,7 @@ export const FETCH_CART_FAILED = '[Cart] Fetch Cart failed'
 export const FETCH_CART = '[Cart] Fetch Cart'
 export const CLEAR_CART = '[Cart] Clear Cart'
 export const REMOVE_ITEM_FROM_CART_ON_SERVER = '[Cart] Remove item from cart'
+export const UPDATE_QUANTITY = '[Cart] Update Quantity' 
 
 
 export class FetchCart implements Action {
@@ -49,6 +50,17 @@ export class  SetCartItems implements Action {
 export class AddItemToCartStart implements Action {
     readonly type = ADD_ITEM_TO_CART_START
 
+    constructor(
+        public payload: {
+            product_id: number
+            quantity: number
+            cart_id: number
+        }
+    ){}
+}
+
+export class UpdateItemQuantity implements Action {
+    readonly type = UPDATE_QUANTITY
     constructor(
         public payload: {
             product_id: number
@@ -102,6 +114,7 @@ export type CartActions =
     | RemoveItemFailed
     | RemoveItemSuccess
     | RemoveItemFromCart
+    | UpdateItemQuantity
     | AddItemSuccess
     | FetchCart
     | FetchCartFailed

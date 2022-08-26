@@ -1,31 +1,18 @@
-.ulmenu-block-right * {
-    height: 100%;
+#header,
+#header .header-main .header-contact .nav-top > li > a,
+#header .top-links > li.menu-item:before {
+  color: #222529;
+}
+
+a:hover {
+  color: #222529;
+}
+
+.item-m{
+  
+  a:hover {
+    color: #222529;
+    border-top: 3px solid #0088cc;
+    overflow: hidden;
   }
-  .conta {
-    margin-left: 8rem;
-    margin-right: 8rem;
-  }
-  .top-nav {
-    border-top: 1.5px solid #f4f4f4;
-   
-  }
-  .level-top {
-    box-sizing: border-box;
-    color: rgb(34, 37, 41);
-    text-decoration: none;
-    background-color: transparent;
-    display: block;
-    outline: none;
-    margin: 0px;
-    font-size: 12px;
-    text-transform: uppercase;
-    padding: 18.5px 22px 20.5px 0px;
-    font-weight: 500;
-    letter-spacing: -0.3px;
-    line-height: 1;
-    position: relative;
-    padding-top: 18px;
-    padding-bottom: 18px;
-    font-family: Poppins;
-    font-style: normal;
-  }
+}

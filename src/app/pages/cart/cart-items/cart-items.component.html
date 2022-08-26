@@ -48,7 +48,7 @@
             <td class="product-price">
               <span class="woocommerce-Price-amount amount"
                 ><bdi
-                  ><span class="woocommerce-Price-currencySymbol">$</span
+                  ><span class="woocommerce-Price-currencySymbol">{{item.quantity}} x $</span
                   >{{ item.product.price.toFixed(2) }}</bdi
                 ></span
               >
@@ -78,11 +78,14 @@
                   placeholder=""
                   inputmode="numeric"
                 />
+                <div>
+                 
+                </div>
                 <button
                   type="button"
                   value="+"
                   class="plus"
-                  (click)="quantityIncrease()"
+                  (click)="quantityIncrease(item.id, item.cart_id, i, item.product.id)"
                 >
                   +
                 </button>

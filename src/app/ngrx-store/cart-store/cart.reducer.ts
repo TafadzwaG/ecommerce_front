@@ -54,6 +54,22 @@ export function cartReducer(
         cartError: action.payload,
         loading: false,
       };
+
+    case CartActions.UPDATE_QUANTITY:
+      const newItems = state.items.map((itemOb) => {
+        if (itemOb.id === action.payload.product_id) {
+          return {
+            ...itemOb,
+            quantity: action.payload.quantity,
+          };
+        }
+        return itemOb;
+      });
+      return {
+        ...state,
+        items: newItems,
+      };
+
     case CartActions.REMOVE_ITEM_FROM_CART:
       return {
         ...state,

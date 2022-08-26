@@ -31,15 +31,45 @@ export class CartItemsComponent implements OnInit {
       });
 
     this.quantityForm = new FormGroup({
-      'quantity': new FormControl(this.quantity),
+      quantity: new FormControl(this.quantity),
     });
+
+    this.quantityForm.valueChanges.subscribe((value) =>
+      console.log('Changed Value', value)
+    );
   }
 
-  quantityIncrease() {
+  quantityIncrease(product_id: number, cart_id: number, index: number, pro_id: number) {
     this.quantity++;
-    console.log(this.quantity)
-    this.quantityForm.get('quantity')
+    this.quantityForm.setValue(
+      {
+        quantity: this.quantity,
+      },
+      {
+        onlySelf: true,
+      }
+    );
 
+    
+    
+    this.onUpdateProduct(product_id, this.quantity, cart_id, pro_id);
+  }
+
+  onUpdateProduct(product_id: number, quantity: number, cart_id: number, item_id:number) {
+    this.store.dispatch(
+      new CartActions.AddItemToCartStart({
+        product_id: item_id - 1,
+        quantity,
+        cart_id,
+      })
+    )
+    this.store.dispatch(
+      new CartActions.UpdateItemQuantity({
+        product_id,
+        quantity,
+        cart_id,
+      })
+    );
   }
 
   quantityDecrease() {
@@ -47,7 +77,10 @@ export class CartItemsComponent implements OnInit {
       return;
     }
     this.quantity--;
-    console.log(this.quantity)
+    // this.quantityForm.setValue({
+    //   quantity: this.quantity,
+    // });
+    // this.onUpdateProduct(33, this.quantity, 12);
   }
 
   calculateSubTotal(quantity: number, price: number) {
