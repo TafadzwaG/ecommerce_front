@@ -1,0 +1,58 @@
+<aside
+                id="woocommerce_price_filter-3"
+                class="widget woocommerce widget_price_filter yith-wcan-list-price-filter"
+              >
+                <h3 class="widget-title">Price<span class="toggle"></span></h3>
+                <form
+                  method="get"
+                  action="https://www.portotheme.com/wordpress/porto/shop1/shop/"
+                >
+                  <div class="price_slider_wrapper">
+                    <div
+                      class="price_slider ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content"
+                      style=""
+                    >
+                      <div
+                        class="ui-slider-range ui-corner-all ui-widget-header"
+                        style="width: 100%; left: 0%"
+                      ></div>
+                      <span
+                        tabindex="0"
+                        class="ui-slider-handle ui-corner-all ui-state-default"
+                        style="left: 0%"
+                      ></span
+                      ><span
+                        tabindex="0"
+                        class="ui-slider-handle ui-corner-all ui-state-default"
+                        style="left: 100%"
+                      ></span>
+                    </div>
+                    <div class="price_slider_amount" data-step="10">
+                      <input
+                        type="text"
+                        id="min_price"
+                        name="min_price"
+                        value="30"
+                        data-min="30"
+                        placeholder="Min price"
+                        style="display: none"
+                      />
+                      <input
+                        type="text"
+                        id="max_price"
+                        name="max_price"
+                        value="1500"
+                        data-max="1500"
+                        placeholder="Max price"
+                        style="display: none"
+                      />
+                      <button type="submit" class="button">Filter</button>
+                      <div class="price_label" style="">
+                        Price: <span class="from">$30</span> —
+                        <span class="to">$1,500</span>
+                      </div>
+                      <div class="clear"></div>
+                    </div>
+                  </div>
+                </form>
+              </aside>

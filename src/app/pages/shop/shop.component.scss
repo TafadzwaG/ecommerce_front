@@ -1,53 +1,55 @@
+.vc_custom_1599764578086 {
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
+  padding-left: 7.25% !important;
+  background-color: #6cb2d9 !important;
+}
+.vc_custom_1599764587094 {
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
+  padding-left: 7.25% !important;
+}
+.vc_custom_1599764595067 {
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
+  padding-left: 7.25% !important;
+}
+.porto-ultimate-content-box {
+  font-size: 16px;
+  position: relative;
+}
+.porto-ultimate-content-box .vc_btn3-container {
+  font-size: 1.4em;
+}
+.btn-modern.btn-lg {
+  padding: 0.7rem 2.15rem;
+}
+@media (max-width: 767px) {
+  .porto-ultimate-content-box {
+    font-size: 14px;
+  }
+}
+@media (max-width: 575px) {
+  .porto-ultimate-content-box {
+    font-size: 12px;
+  }
+}
+.coupon-sale-text {
+  transform: rotate(-2deg);
+  letter-spacing: -0.01em;
+  position: relative;
+  font-weight: 700;
+}
+.coupon-sale-text b {
+  display: inline-block;
+  font-size: 1.6em;
+  padding: 5px 8px;
+  background: #fff;
+}
+sup {
+  font-size: 50%;
+}
 
-              .vc_custom_1599764578086 {
-                padding-top: 20px !important;
-                padding-bottom: 20px !important;
-                padding-left: 7.25% !important;
-                background-color: #6cb2d9 !important;
-              }
-              .vc_custom_1599764587094 {
-                padding-top: 20px !important;
-                padding-bottom: 20px !important;
-                padding-left: 7.25% !important;
-              }
-              .vc_custom_1599764595067 {
-                padding-top: 20px !important;
-                padding-bottom: 20px !important;
-                padding-left: 7.25% !important;
-              }
-              .porto-ultimate-content-box {
-                font-size: 16px;
-                position: relative;
-              }
-              .porto-ultimate-content-box .vc_btn3-container {
-                font-size: 1.4em;
-              }
-              .btn-modern.btn-lg {
-                padding: 0.7rem 2.15rem;
-              }
-              @media (max-width: 767px) {
-                .porto-ultimate-content-box {
-                  font-size: 14px;
-                }
-              }
-              @media (max-width: 575px) {
-                .porto-ultimate-content-box {
-                  font-size: 12px;
-                }
-              }
-              .coupon-sale-text {
-                transform: rotate(-2deg);
-                letter-spacing: -0.01em;
-                position: relative;
-                font-weight: 700;
-              }
-              .coupon-sale-text b {
-                display: inline-block;
-                font-size: 1.6em;
-                padding: 5px 8px;
-                background: #fff;
-              }
-              sup {
-                font-size: 50%;
-              }
-           
+.woocommerce-page.archive .sidebar-content {
+  border: 1px solid #e7e7e7;
+}

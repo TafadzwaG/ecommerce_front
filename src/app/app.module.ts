@@ -1,3 +1,4 @@
+import { ShopModule } from './pages/shop/shop.module';
 import { CartEffects } from './ngrx-store/cart-store/cart.effects';
 import { AuthInterceptorService } from './interceptors/auth-interceptor.service';
 import { NgModule } from '@angular/core';
@@ -70,7 +71,9 @@ import { CartTotalCardComponent } from './pages/cart/cart-total-card/cart-total-
 import { EmptyCartComponent } from './pages/cart/empty-cart/empty-cart.component';
 import { CartBreadCrumbComponent } from './pages/cart/cart-bread-crumb/cart-bread-crumb.component';
 import { ActionsComponent } from './pages/cart/actions/actions.component';
-import { ImageCardComponent } from './ui/image-card/image-card.component'
+import { ImageCardComponent } from './ui/image-card/image-card.component';
+
+
 
 @NgModule({
   declarations: [
@@ -131,10 +134,13 @@ import { ImageCardComponent } from './ui/image-card/image-card.component'
     CartBreadCrumbComponent,
     ActionsComponent,
     ImageCardComponent,
+    
+    
   ],
   imports: [
     ReactiveFormsModule,
     BrowserModule,
+    ShopModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
