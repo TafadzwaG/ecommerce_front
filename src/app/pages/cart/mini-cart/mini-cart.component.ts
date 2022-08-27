@@ -2,8 +2,8 @@ import { selectCartCost } from 'src/app/ngrx-store/cart-store/cart.selectors';
 import { Subscription } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
-import * as CartActions from '../../ngrx-store/cart-store/cart.actions';
-import * as fromApp from '../../ngrx-store/app.reducer';
+import * as CartActions from '../../../ngrx-store/cart-store/cart.actions';
+import * as fromApp from '../../../ngrx-store/app.reducer';
 @Component({
   selector: 'app-mini-cart',
   templateUrl: './mini-cart.component.html',

@@ -1,3 +1,4 @@
+import { CartModule } from './pages/cart/cart.module';
 import { ShopModule } from './pages/shop/shop.module';
 import { CartEffects } from './ngrx-store/cart-store/cart.effects';
 import { AuthInterceptorService } from './interceptors/auth-interceptor.service';
@@ -56,12 +57,6 @@ import  { BrowserAnimationsModule }  from '@angular/platform-browser/animations'
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { ProductDetailStComponent } from './skeletons/product-detail-st/product-detail-st.component';
-import { CartItemCardComponent } from './pages/cart/cart-item-card/cart-item-card.component';
-import { CartItemsComponent } from './pages/cart/cart-items/cart-items.component';
-import { CartTotalCardComponent } from './pages/cart/cart-total-card/cart-total-card.component';
-import { EmptyCartComponent } from './pages/cart/empty-cart/empty-cart.component';
-import { CartBreadCrumbComponent } from './pages/cart/cart-bread-crumb/cart-bread-crumb.component';
-import { ActionsComponent } from './pages/cart/actions/actions.component';
 import { UserInterfaceModule } from './ui/user-interface.module';
 
 
@@ -102,27 +97,19 @@ import { UserInterfaceModule } from './ui/user-interface.module';
     ProductDetailComponent,
     ShopComponent,
     ShopBannerCardComponent,
-  
     SideBarRightComponent,
     TabContainerComponent,
     ReviewFormComponent,
     ReviewCardComponent,
     ProductComponent,
     ColorSizeComponent,
-  
     ProductDetailStComponent,
-    CartItemCardComponent,
-    CartItemsComponent,
-    CartTotalCardComponent,
-    EmptyCartComponent,
-    CartBreadCrumbComponent,
-    ActionsComponent,
-    
-    
+  
   ],
   imports: [
     ReactiveFormsModule,
     BrowserModule,
+    CartModule,
     UserInterfaceModule,
     ShopModule,
     AppRoutingModule,
