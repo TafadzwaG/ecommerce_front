@@ -8,6 +8,7 @@ import { AsideSizesComponent } from './aside-sizes/aside-sizes.component';
 import { PaginationComponent } from './pagination/pagination.component';
 import { ProductCardComponent } from './product-card/product-card.component';
 import { ToggleBeforeComponent } from './toggle-before/toggle-before.component';
+import { SharedComponentsModule } from 'src/app/components/shared-components.module';
 
 
 
@@ -23,7 +24,8 @@ import { ToggleBeforeComponent } from './toggle-before/toggle-before.component';
     AsideFeauturesComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    SharedComponentsModule,
   ],
   exports: [
     ProductCardComponent,

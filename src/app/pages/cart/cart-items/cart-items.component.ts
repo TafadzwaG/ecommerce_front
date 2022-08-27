@@ -56,9 +56,10 @@ export class CartItemsComponent implements OnInit {
   }
 
   onUpdateProduct(product_id: number, quantity: number, cart_id: number, item_id:number) {
+    let newQuantity = quantity - 1 
     this.store.dispatch(
       new CartActions.AddItemToCartStart({
-        product_id: item_id - 1,
+        product_id: item_id,
         quantity,
         cart_id,
       })
